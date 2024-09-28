@@ -4,10 +4,15 @@ import * as path from 'path';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lang: 'fr-CH',
   title: "MSIG-24",
   description: "Stage professionnel pour obtenir le passeport vers la HEG",
+  head: [
+    ['link', { rel: "icon", href: "logo.svg"}],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: 'logo.svg',
     nav: [
       { text: 'Accueil', link: '/' },
       { text: 'Thématiques', link: '/thematiques/' },

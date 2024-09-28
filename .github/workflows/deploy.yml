@@ -55,6 +55,12 @@ jobs:
         run: pnpm pdf:lin
         continue-on-error: true
 
+      - name: Copy logo,favicon to /
+        run: |
+          cp logo.svg .vitepress/dist/
+          cp favicon.ico .vitepress/dist/
+        continue-on-error: true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
