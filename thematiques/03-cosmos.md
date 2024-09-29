@@ -12,7 +12,7 @@ la [cheat sheet](https://raw.githubusercontent.com/jonathanMelly/cosmos/integrat
 ![cosmos2.gif](cosmos2.gif)
 
 ## Activités
-1. [ ] [1. HelloCosmos](https://labs.section-inf.ch/codelabs/cosmos-base-00-hello/index.html?index=..%2F..msig)
-2. [ ] [2. Million](https://labs.section-inf.ch/codelabs/cosmos-base-01-million/index.html?index=..%2F..msig)
-3. [ ] [3. Animation](https://labs.section-inf.ch/codelabs/cosmos-base-02-animation/index.html?index=..%2F..msig)
-4. [ ] [4. Pluie](https://labs.section-inf.ch/codelabs/cosmos-base-03-raincollector/index.html?index=..%2F..msig)
+1. [ ] [HelloCosmos](https://labs.section-inf.ch/codelabs/cosmos-base-00-hello/index.html?index=..%2F..msig)
+2. [ ] [Million](https://labs.section-inf.ch/codelabs/cosmos-base-01-million/index.html?index=..%2F..msig)
+3. [ ] [Animation](https://labs.section-inf.ch/codelabs/cosmos-base-02-animation/index.html?index=..%2F..msig)
+4. [ ] [Pluie](https://labs.section-inf.ch/codelabs/cosmos-base-03-raincollector/index.html?index=..%2F..msig)

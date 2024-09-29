@@ -4,6 +4,8 @@ import fg from 'fast-glob'
 import fs from 'node:fs/promises'
 import { dirname } from 'node:path'
 import { withMermaid } from "vitepress-plugin-mermaid";
+import taskLists from 'markdown-it-task-lists'
+import { full as emoji } from 'markdown-it-emoji'
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
@@ -74,7 +76,12 @@ export default withMermaid({
     },
     lastUpdated: true,
     markdown: {
-        math: true
+        math: true,
+        config: (md) => {
+            md
+                .use(taskLists)
+                .use(emoji)
+        }
     },
     async buildEnd({ srcDir: src, outDir: dest }) {
         //Copy other assets...

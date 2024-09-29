@@ -14,9 +14,15 @@ importers:
       glob:
         specifier: ^11.0.0
         version: 11.0.0
+      markdown-it-emoji:
+        specifier: ^3.0.0
+        version: 3.0.0
       markdown-it-mathjax3:
         specifier: ^4.3.2
         version: 4.3.2
+      markdown-it-task-lists:
+        specifier: ^2.1.1
+        version: 2.1.1
       md-to-pdf:
         specifier: ^5.2.4
         version: 5.2.4
@@ -1543,8 +1549,14 @@ packages:
   mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
 
+  markdown-it-emoji@3.0.0:
+    resolution: {integrity: sha512-+rUD93bXHubA4arpEZO3q80so0qgoFJEKRkRbjKX8RTdca89v2kfyF+xR3i2sQTwql9tpPZPOQN5B+PunspXRg==}
+
   markdown-it-mathjax3@4.3.2:
     resolution: {integrity: sha512-TX3GW5NjmupgFtMJGRauioMbbkGsOXAAt1DZ/rzzYmTHqzkO1rNAdiMD4NiruurToPApn2kYy76x02QN26qr2w==}
+
+  markdown-it-task-lists@2.1.1:
+    resolution: {integrity: sha512-TxFAc76Jnhb2OUu+n3yz9RMu4CwGfaT788br6HhEDlvWfdeJcLUsxk1Hgw2yJio0OXsxv7pyIPmvECY7bMbluA==}
 
   marked@13.0.3:
     resolution: {integrity: sha512-rqRix3/TWzE9rIoFGIn8JmsVfhiuC8VIQ8IdX5TfzmeBucdY05/0UlzKaw0eVtpcN/OdVFpBk7CjKGo9iHJ/zA==}
@@ -3902,12 +3914,16 @@ snapshots:
 
   mark.js@8.11.1: {}
 
+  markdown-it-emoji@3.0.0: {}
+
   markdown-it-mathjax3@4.3.2:
     dependencies:
       juice: 8.1.0
       mathjax-full: 3.2.2
     transitivePeerDependencies:
       - encoding
+
+  markdown-it-task-lists@2.1.1: {}
 
   marked@13.0.3: {}
 

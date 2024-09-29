@@ -8,11 +8,12 @@
 - [Pseudo-code](../supports/pseudocode.md)
 
 ## Activités
-1. [ ] [1. Décomposer](../activites/decomposer/README.md)
-2. [ ] [2. Scoubidou](../activites/scoubidou/README.md)
-3. [ ] [3. Robots](../activites/robot/README.md)
-4. [ ] [4. Puzzles](../activites/puzzles/README.md)
-5. [ ] [5. Calculatrice FDP](#projet-calculatrice-fdp)
+
+1. [ ] [Décomposer](../activites/decomposer/README.md)
+2. [ ] [Scoubidou](../activites/scoubidou/README.md)
+3. [ ] [Robots](../activites/robot/README.md)
+4. [ ] [Puzzles](../activites/puzzles/README.md)
+5. [ ] [Calculatrice FDP](#projet-calculatrice-fdp)
 
 ---
 
