@@ -31,8 +31,7 @@ const {Layout} = DefaultTheme
 </style>
 
 <template>
-  <Layout>
-    <template #doc-footer-before>
+
       <a class="btn" download v-if="page.filePath.startsWith('supports')"
          :href="page.filePath.replace('supports/', '').replace('.md', '.pdf')">
         <svg class="fl" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32">
@@ -44,8 +43,5 @@ const {Layout} = DefaultTheme
 
       </a>
 
-    </template>
-    <template>
-    </template>
-  </Layout>
+
 </template>
