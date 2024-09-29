@@ -2,3 +2,6 @@
 
 ## Supports
 [Algorithmie](../supports/algorithmes.md)
+
+## Activités
+[Décomposer](../activites/decomposer/README.md)

@@ -1,6 +1,9 @@
 import {defineConfig} from 'vitepress';
 import {glob} from 'glob';
 import * as path from 'path';
+import fg from 'fast-glob'
+import fs from 'node:fs/promises'
+import { dirname } from 'node:path'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -70,4 +73,21 @@ export default defineConfig({
         '(.*)/README.md': '(.*)/index.md'
     },
     lastUpdated: true,
+    markdown: {
+        math: true
+    },
+    async buildEnd({ srcDir: src, outDir: dest }) {
+        //Copy other assets...
+        const files = await fg(['**/*', '!**/*.md'], { cwd: src, absolute: true })
+        await Promise.all(
+            files.map(async (file) => {
+                const destFile = file.replace(src, dest)
+                await fs.mkdir(dirname(destFile), { recursive: true })
+                await fs.copyFile(file, destFile)
+            })
+        )
+    },
+    /*ignoreDeadLinks: [
+        /\.docx$/,
+    ]*/
 })
