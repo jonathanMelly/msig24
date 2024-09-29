@@ -1,12 +1,12 @@
-import {defineConfig} from 'vitepress';
 import {glob} from 'glob';
 import * as path from 'path';
 import fg from 'fast-glob'
 import fs from 'node:fs/promises'
 import { dirname } from 'node:path'
+import { withMermaid } from "vitepress-plugin-mermaid";
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid({
     lang: 'fr-CH',
     title: "MSIG-24",
     description: "Stage professionnel pour obtenir le passeport vers la HEG",
@@ -87,7 +87,13 @@ export default defineConfig({
             })
         )
     },
+    mermaid: {
+        // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
+    },
     /*ignoreDeadLinks: [
         /\.docx$/,
     ]*/
-})
+});
+
+
+
