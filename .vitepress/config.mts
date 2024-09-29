@@ -2,10 +2,10 @@ import {glob} from 'glob';
 import * as path from 'path';
 import fg from 'fast-glob'
 import fs from 'node:fs/promises'
-import { dirname } from 'node:path'
-import { withMermaid } from "vitepress-plugin-mermaid";
+import {dirname} from 'node:path'
+import {withMermaid} from "vitepress-plugin-mermaid";
 import taskLists from 'markdown-it-task-lists'
-import { full as emoji } from 'markdown-it-emoji'
+import {full as emoji} from 'markdown-it-emoji'
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
@@ -23,11 +23,11 @@ export default withMermaid({
             {text: 'Accueil', link: '/'},
             {text: 'Thématiques', link: '/thematiques/'},
             {text: 'Supports', link: '/supports/'},
-            {text: 'Activités', link: '/activites/'}
+            //{text: 'Activités', link: '/activites/'}
         ],
         outline: {label: "Sur cette page"},
         docFooter: {prev: "Précédent", next: "Suivant"},
-        returnToTopLabel:"Retourner au début",
+        returnToTopLabel: "Retourner au début",
         lastUpdated: {
             text: 'Dernière mise à jour',
             formatOptions: {
@@ -35,30 +35,46 @@ export default withMermaid({
                 timeStyle: 'short'
             }
         },
-        sidebar: [
-            {
-                text: 'Thématiques',
-                collapsed: false,
-                items: glob.sync('thematiques/**/*.md', {ignore: '*/**README.md', posix: true})
-                    .map(file => ({text: `${path.basename(file).replace(".md", "")}`, link: `/${file}`})).reverse()
-            },
-            {
-                text: 'Supports',
-                collapsed: true,
-                items: glob.sync('supports/**/*.md', {ignore: '*/**README.md', posix: true})
-                    .map(file => ({text: `${path.basename(file).replace(".md", "")}`, link: `/${file}`})).reverse()
-            },
-            {
-                text: 'Activités',
-                collapsed: true,
-                items: glob.sync('activites/**/README.md', {ignore: 'activites/README.md', posix: true})
-                    .map(file => ({
-                        text: `${file.split("/")[1]}`,
-                        link: `/${file.replace("README", "index")}`
-                    })).reverse()
-            },
+        sidebar: {
+            '/': [
+                {
+                    text: 'Thématiques',
+                    collapsed:
+                        false,
+                    items:
+                        glob.sync('thematiques/**/*.md', {ignore: '*/**README.md', posix: true})
+                            .map(file => ({
+                                text: `${path.basename(file).replace(".md", "")}`,
+                                link: `/${file}`
+                            })).reverse()
+                }]
+            , '/supports/': [
+                {
+                    text: 'Supports',
+                    collapsed:
+                        false,
+                    items:
+                        glob.sync('supports/**/*.md', {ignore: '*/**README.md', posix: true})
+                            .map(file => ({
+                                text: `${path.basename(file).replace(".md", "")}`,
+                                link: `/${file}`
+                            })).reverse()
+                }]
+            , '/activites/': [
+                {
+                    text: 'Activités',
+                    collapsed:
+                        true,
+                    items:
+                        glob.sync('activites/**/README.md', {ignore: 'activites/README.md', posix: true})
+                            .map(file => ({
+                                text: `${file.split("/")[1]}`,
+                                link: `/${file.replace("README", "index")}`
+                            })).reverse()
+                }
+            ],
 
-        ],
+        },
         search: {
             provider: 'local',
             options: {
@@ -66,7 +82,7 @@ export default withMermaid({
                     button: {buttonText: "Rechercher", buttonAriaLabel: "Rechercher"},
                     modal: {
                         displayDetails: "Voir les détails",
-                        footer: {selectText: "Valider",closeText:"Fermer",navigateText:"Pour naviguer"}
+                        footer: {selectText: "Valider", closeText: "Fermer", navigateText: "Pour naviguer"}
                     },
                 }
             }
@@ -90,13 +106,13 @@ export default withMermaid({
                 .use(emoji)
         }
     },
-    async buildEnd({ srcDir: src, outDir: dest }) {
+    async buildEnd({srcDir: src, outDir: dest}) {
         //Copy other assets...
-        const files = await fg(['**/*', '!**/*.md'], { cwd: src, absolute: true })
+        const files = await fg(['**/*', '!**/*.md'], {cwd: src, absolute: true})
         await Promise.all(
             files.map(async (file) => {
                 const destFile = file.replace(src, dest)
-                await fs.mkdir(dirname(destFile), { recursive: true })
+                await fs.mkdir(dirname(destFile), {recursive: true})
                 await fs.copyFile(file, destFile)
             })
         )
