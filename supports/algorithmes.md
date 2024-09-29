@@ -1,3 +1,6 @@
+---
+prev: {text: "supports", link: "supports/README.md"}
+---
 # Introduction à la logique computationnelle ou algorithmie
 
 La logique computationnelle étudie les principes et les méthodes pour résoudre des problèmes complexes en utilisant des

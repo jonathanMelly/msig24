@@ -1,3 +1,6 @@
+---
+next: {text: "Comment parler à la machine",link: "supports/algorithmes.md"}
+---
 # Théorie
 ![Alt text](theorie.png)
 
