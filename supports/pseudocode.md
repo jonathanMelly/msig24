@@ -263,6 +263,57 @@ Fin
 5. **Conclusion** : Un message final est affiché pour remercier l'utilisateur.
 
 
+## Version graphique
+On peut écrire du pseudo-code et on peut aussi le *dessiner* :
+
+```mermaid
+
+flowchart TD
+
+    A[Commencer] --> B[Proposer une combinaison initiale]
+    B --> C[Recevoir les indices : <br/>  Nombre de pions noirs et blancs <br/>&nbsp;]
+    C --> D{Les indices indiquent-ils que la combinaison est correcte?<br/>&nbsp;}
+    D -->|Oui| E[Solution trouvée, fin du jeu]
+    D -->|Non| F[Analyser les indices reçus]
+    
+    F --> G{Y a-t-il des pions noirs?}
+    G -->|Oui| H[Identifier les couleurs et positions probables]
+    G -->|Non| I[Conclure que certaines couleurs sont incorrectes]
+    
+    H --> J{Y a-t-il des pions blancs?}
+    I --> J
+    
+    J -->|Oui| K[Identifier les couleurs correctes, mais mal placées<br/>&nbsp;]
+    J -->|Non| L[Réduire les possibilités de couleurs]
+    
+    K --> M[Éliminer les combinaisons impossibles basées sur les indices<br/>&nbsp;]
+    L --> M
+    
+    M --> N[Choisir une nouvelle combinaison probable]
+    N --> B
+```
+
+### Explication détaillée des étapes :
+
+1. **Commencer** : Démarrer le jeu.
+2. **Proposer une combinaison initiale** : Faire une première proposition de couleurs.
+3. **Recevoir les indices** : Recevoir le retour de l’autre joueur, composé de :
+    - **Pions noirs** : Couleur correcte à la bonne position.
+    - **Pions blancs** : Couleur correcte mais mal placée.
+4. **Les indices indiquent-ils que la combinaison est correcte ?** : Vérifier si les indices signifient que la proposition est entièrement correcte.
+    - Si oui, **Solution trouvée, fin du jeu** : La combinaison a été trouvée.
+    - Si non, procéder à une analyse plus approfondie des indices.
+5. **Analyser les indices reçus** : Analyser les pions noirs et blancs pour obtenir des informations.
+6. **Y a-t-il des pions noirs ?** : Y a-t-il des pions noirs parmi les indices ?
+    - Si oui, **Identifier les couleurs et positions probables** : Identifier quelles couleurs et positions sont probablement correctes.
+    - Si non, **Conclure que certaines couleurs sont incorrectes** : Déduire que certaines couleurs ne font pas partie de la solution et les éliminer des futures propositions.
+7. **Y a-t-il des pions blancs ?** : Y a-t-il des pions blancs parmi les indices ?
+    - Si oui, **Identifier les couleurs correctes, mais mal placées** : Identifier quelles couleurs sont correctes mais ne sont pas à la bonne position.
+    - Si non, **Réduire les possibilités de couleurs** : Restreindre les couleurs restantes possibles.
+8. **Éliminer les combinaisons impossibles basées sur les indices** : Utiliser les indices pour éliminer les combinaisons qui ne peuvent pas être la solution.
+9. **Choisir une nouvelle combinaison probable** : Faire une nouvelle proposition basée sur l’analyse des indices et les possibilités restantes.
+10. Revenir à **Proposer une combinaison** jusqu'à ce que la combinaison correcte soit trouvée.
+
 
 ## Conclusion
 
