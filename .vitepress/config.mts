@@ -15,6 +15,7 @@ export default withMermaid({
     head: [
         ['link', {rel: "icon", href: "logo.svg"}],
     ],
+
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: 'logo.svg',
@@ -27,7 +28,13 @@ export default withMermaid({
         outline: {label: "Sur cette page"},
         docFooter: {prev: "Précédent", next: "Suivant"},
         returnToTopLabel:"Retourner au début",
-
+        lastUpdated: {
+            text: 'Dernière mise à jour',
+            formatOptions: {
+                dateStyle: 'full',
+                timeStyle: 'short'
+            }
+        },
         sidebar: [
             {
                 text: 'Thématiques',
