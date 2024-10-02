@@ -271,8 +271,8 @@ On peut écrire du pseudo-code et on peut aussi le *dessiner* :
 flowchart TD
 
     A[Commencer] --> B[Proposer une combinaison initiale]
-    B --> C[Recevoir les indices : <br/>  Nombre de pions noirs et blancs <br/>&nbsp;]
-    C --> D{Les indices indiquent-ils que la combinaison est correcte?<br/>&nbsp;}
+    B --> C[Recevoir les indices : X noirs et Y blancs]
+    C --> D{Combinaison est correcte?}
     D -->|Oui| E[Solution trouvée, fin du jeu]
     D -->|Non| F[Analyser les indices reçus]
     
@@ -283,10 +283,10 @@ flowchart TD
     H --> J{Y a-t-il des pions blancs?}
     I --> J
     
-    J -->|Oui| K[Identifier les couleurs correctes, mais mal placées<br/>&nbsp;]
+    J -->|Oui| K[Identifier les couleurs correctes mal placées]
     J -->|Non| L[Réduire les possibilités de couleurs]
     
-    K --> M[Éliminer les combinaisons impossibles basées sur les indices<br/>&nbsp;]
+    K --> M[Éliminer les combinaisons impossibles]
     L --> M
     
     M --> N[Choisir une nouvelle combinaison probable]
