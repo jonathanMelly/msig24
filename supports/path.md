@@ -97,11 +97,16 @@ Pour modifier ou ajouter un chemin à la variable `PATH` sur Windows :
     - Cliquez sur "Variables d'environnement".
 
 
+> ⚠ Si on a n’a pas les droits admin, il faut utiliser la commande suivante : `rundll32 sysdm.cpl,EditEnvironmentVariables`
+
+
 2. **Modifier la variable `PATH`** :
     - Dans la section "Variables système", recherchez la variable `Path` et sélectionnez-la.
     - Cliquez sur "Modifier".
     - Ajoutez le nouveau chemin (par exemple, `C:\MonProgramme\Bin`) en cliquant sur "Nouveau" et en saisissant le
       chemin.
+
+> Remplacer `c:\MonProgramme\Bin` par `c:\nomad\kopia\kopia` par exemple...
 
 
 3. **Enregistrer et redémarrer** :
