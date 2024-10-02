@@ -23,5 +23,5 @@ sur les fichiers, dossiers et systèmes d’exploitation...
 - [Chemins](../supports/path.md)
 
 ## Activités
-1. [ ] [Structure de dossiers](../activites/cmd/)
-2. [ ] [Sauvegarde](../activites/sauvegarde/)
+1. [ ] [Structure de dossiers](../activites/cmd)
+2. [ ] [Sauvegarde](../activites/sauvegarde)

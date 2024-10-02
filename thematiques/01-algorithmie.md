@@ -9,10 +9,10 @@
 
 ## Activités
 
-1. [X] [Décomposer](../activites/decomposer/)
-2. [X] [Scoubidou](../activites/scoubidou/)
-3. [X] [Robots](../activites/robot/)
-4. [X] [Puzzles](../activites/puzzles/)
+1. [X] [Décomposer](../activites/decomposer)
+2. [X] [Scoubidou](../activites/scoubidou)
+3. [X] [Robots](../activites/robot)
+4. [X] [Puzzles](../activites/puzzles)
 5. [ ] [Calculatrice FDP](#projet-calculatrice-fdp)
 
 ---
