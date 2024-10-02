@@ -314,6 +314,16 @@ flowchart TD
 9. **Choisir une nouvelle combinaison probable** : Faire une nouvelle proposition basée sur l’analyse des indices et les possibilités restantes.
 10. Revenir à **Proposer une combinaison** jusqu'à ce que la combinaison correcte soit trouvée.
 
+## Origine
+Tous ces élément sont liés à l’architecture actuelle des ordinateurs basés sur le modèle de Von Neuman:
+
+![vneuman.svg](vneuman.svg)
+
+- Input => Lecture
+- Output => Écriture
+- Control Unit => CPU => Éxécute les opérations
+- Arithmetic => éxécute les calculs / comparaisons
+- Memory => mémorise les valeurs (qu’on peut récupérer)
 
 ## Conclusion
 
