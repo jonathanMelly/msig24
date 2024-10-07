@@ -9,11 +9,11 @@
 
 ## Activités
 
-1. [X] [Décomposer](../activites/decomposer)
-2. [X] [Scoubidou](../activites/scoubidou)
-3. [X] [Robots](../activites/robot)
-4. [X] [Puzzles](../activites/puzzles)
-5. [ ] [Calculatrice FDP](#projet-calculatrice-fdp)
+1. [X] [Décomposer](../activites/decomposer/README.md)
+2. [X] [Scoubidou](../activites/scoubidou/README.md)
+3. [X] [Robots](../activites/robot/README.md)
+4. [X] [Puzzles](../activites/puzzles/README.md)
+5. [X] [Calculatrice FDP](#projet-calculatrice-fdp)
 
 ---
 

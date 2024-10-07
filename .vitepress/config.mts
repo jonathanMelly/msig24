@@ -21,8 +21,8 @@ export default withMermaid({
         logo: 'logo.svg',
         nav: [
             {text: 'Accueil', link: '/'},
-            {text: 'Thématiques', link: '/thematiques/'},
-            {text: 'Supports', link: '/supports/'},
+            {text: 'Thématiques', link: '/thematiques/README.html'},
+            {text: 'Supports', link: '/supports/README.html'},
             //{text: 'Activités', link: '/activites/'}
         ],
         outline: {label: "Sur cette page"},
@@ -95,7 +95,6 @@ export default withMermaid({
     base: "/msig24/",//for gh pages
     rewrites: {
         'README.md': 'index.md',
-        '(.*)/README.md': '(.*)/index.md'
     },
     lastUpdated: true,
     markdown: {
