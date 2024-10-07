@@ -12,7 +12,7 @@ hero:
       link: https://roadmap.sh/r/msig24
     - theme: brand
       text: Thématiques
-      link: /thematiques/
+      link: /thematiques/README.html
 
 features:
   - title: Projets
