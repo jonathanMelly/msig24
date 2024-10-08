@@ -20,7 +20,8 @@ la [cheat sheet](https://raw.githubusercontent.com/jonathanMelly/cosmos/integrat
 4. [ ] [Pluie](https://labs.section-inf.ch/codelabs/cosmos-base-03-raincollector/index.html?index=..%2F..msig)
 5. [ ] [Commandes](../activites/commandes1/README.md)
 6. [ ] [Fourchette](../activites/fourchette/README.md)
-7. [ ] [ToucherCouler](../activites/bataille-navale/README.md)
+7. [ ] [Formes](../activites/formes/README.md)
+8. [ ] [ToucherCouler](../activites/bataille-navale/README.md)
 
 ## Projet phare : Calculatrice
 Il est temps de reprendre [l’exercice de la calculatrice](../thematiques/01-algorithmie.md#projet-calculatrice-fdp)
