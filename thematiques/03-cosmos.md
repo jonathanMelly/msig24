@@ -15,13 +15,13 @@ la [cheat sheet](https://raw.githubusercontent.com/jonathanMelly/cosmos/integrat
 
 ## Activités
 1. [X] [HelloCosmos](https://labs.section-inf.ch/codelabs/cosmos-base-00-hello/index.html?index=..%2F..msig)
-2. [ ] [Million](https://labs.section-inf.ch/codelabs/cosmos-base-01-million/index.html?index=..%2F..msig)
+2. [X] [Million](https://labs.section-inf.ch/codelabs/cosmos-base-01-million/index.html?index=..%2F..msig)
 3. [ ] [Animation](https://labs.section-inf.ch/codelabs/cosmos-base-02-animation/index.html?index=..%2F..msig)
 4. [ ] [Pluie](https://labs.section-inf.ch/codelabs/cosmos-base-03-raincollector/index.html?index=..%2F..msig)
-5. [ ] [Commandes](../activites/commandes1/README.md)
-6. [ ] [Fourchette](../activites/fourchette/README.md)
-7. [ ] [Formes](../activites/formes/README.md)
-8. [ ] [ToucherCouler](../activites/bataille-navale/README.md)
+5. [ ] [Fourchette](../activites/fourchette/README.md)
+6. [ ] [Formes](../activites/formes/README.md)
+7. [ ] [ToucherCouler](../activites/bataille-navale/README.md)
+8. [ ] [Commandes](../activites/commandes1/README.md)
 
 ## Projet phare : Calculatrice
 Il est temps de reprendre [l’exercice de la calculatrice](../thematiques/01-algorithmie.md#projet-calculatrice-fdp)
