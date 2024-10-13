@@ -141,29 +141,34 @@ git clone https://github.com/ton-utilisateur/mon_projet.git
 graph TD
 subgraph Local [Actions Locales]
 A[Créer un répertoire local]
-B[Initialiser un dépôt Git
-`git init .`
-]
+B["Initialiser un dépôt Git 
+'git init .'
+__"]
 C[Créer/Modifier des fichiers]
 ADD[Ajouter des fichiers à l'index
-`git add ...`
+'git add ...'
+__
 ]
 COMMIT["Faire un commit local
-`git commit -m 'feat(login): added help button'`"
+'git commit -m 'feat(login): added help button''"
+__
 ]
 GHREPOEXIST{"Dépôt déjà créé sur github ?"}
-G[Ajouter un remote vers GitHub
-`git remote add origin https://github.com/OWNER/REPOSITORY.git`
+G["Ajouter un remote vers GitHub
+'git remote add origin $REPO_URL'
+__"
 ]
 PUSH["Pousser les commits vers GitHub
-`git push` ou `git push -u origin` (1ère fois)"
+'git push' ou 'git push -u origin' (1ère fois)"
+__
 ]
 
 I[Ajouter un tag pour une release
-`git tag v1.0.0`
+'git tag v1.0.0'
+__
 ]
 J[Pousser le tag vers GitHub
-`git push tag v1.0.0`
+'git push tag v1.0.0'
 ]
 end
 
