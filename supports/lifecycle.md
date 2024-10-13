@@ -142,7 +142,7 @@ graph TD
 subgraph Local [Actions Locales]
 A[Créer un répertoire local]
 B[Initialiser un dépôt Git
-        `git init .`
+`git init .`
 ]
 C[Créer/Modifier des fichiers]
 ADD[Ajouter des fichiers à l'index
@@ -351,7 +351,7 @@ modifications récentes.
 
 Même si elle est aussi testée durant l’écriture (notamment avec des tests unitaires et/ou d’intégration automatisés),
 une application doit être validée avant de partir en production, pour cela, on utilise un
-[protocole de test](TestsFonctionnelsSucrerie.docx).
+[protocole de test](./TestsFonctionnelsSucrerie.docx).
 
 ## Release
 

@@ -7,6 +7,8 @@ import {withMermaid} from "vitepress-plugin-mermaid";
 import taskLists from 'markdown-it-task-lists'
 import {full as emoji} from 'markdown-it-emoji'
 
+process.env.VITE_EXTRA_EXTENSIONS = 'docx'
+
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
     lang: 'fr-CH',

@@ -142,5 +142,5 @@ prix_final = prix_reduit + taxes
 
 ### Annexes pour l’exercice `Restaurant`
 
-- [Template à compléter1](c-decomposer1.docx){target="_blank"}
-- [Corrigé](x-decomposer1.docx){target="_blank"}
+- [Template à compléter1](c-decomposer1.docx)
+- [Corrigé](x-decomposer1.docx)
