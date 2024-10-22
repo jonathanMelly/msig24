@@ -25,28 +25,31 @@ est nécessaire pour réaliser de grands projets, on apprécie d’utiliser un s
 ### GIT
 
 Git est un système de versioning populaire qui permet de sauvegarder "toute l’histoire du code".
+Autrement dit, `Git` est une sorte de `kopia` avec, en plus, un **suivi des modifications**.  
+Ainsi à chaque *snapshot* (point de sauvegarde) est associé un **message** plus ou moins détaillé qui indique ce qui a été fait.
+On peut donc **tracer** l'évolution de documents numériques comme le montre l'image suivante :
 
 ![git.jpg](git.jpg)
 
-Mais Peut-être que l’image suivante sera plus parlante :
+Peut-être le screenshot suivant sera plus parlant :
 
 ![zelda-save.png](zelda-save.png)
 
 L'historique Git fonctionne de manière similaire à un système de sauvegarde automatique dans un jeu vidéo. Lorsqu'on
 travaille sur un projet, il est possible de créer des "sauvegardes" à des moments clés, appelées **commits**. Chaque
 commit enregistre l'état exact des fichiers, `de la même manière qu'une sauvegarde dans un jeu capture la progression,
-les objets et la position`.
+les objets et la position` ainsi qu'un message décrivant les modifications effectuées.
 
 Git conserve une trace de toutes ces "sauvegardes", permettant ainsi de **revenir à un état antérieur à tout moment**,
 comme
 si `on rechargeait une ancienne partie`. Si une erreur survient ou si des modifications non désirées ont été apportées,
-il
-est possible de restaurer une version précédente sans perdre les autres progrès réalisés.
+il est possible de restaurer une version précédente sans perdre les autres progrès réalisés.
 
 > Git fonctionne en conservant un historique du projet, avec des points de restauration, et offre la possibilité de
 > naviguer entre différentes versions, un peu à l'image des sauvegardes automatiques dans un jeu vidéo.
 
-Voici un exemple pratique pour *activer* un dépôt avec GIT partant du principe que l’outil a déjà été installé.
+Pour bien comprendre et intégrer le concept, voici un exemple pratique pour *activer* un dépôt avec GIT partant du 
+principe que l’outil a déjà été installé (si ce n'est pas le cas se référer à [GIT](https://git-scm.com/downloads)).
 
 #### Étape 1 : Créer un dépôt local
 
@@ -141,7 +144,7 @@ git clone https://github.com/ton-utilisateur/mon_projet.git
 graph TD
 subgraph Local [Actions Locales]
 A[Créer un répertoire local]
-B["Initialiser un dépôt Git 
+B["Initialiser un dépôt Git
 'git init .'
 __"]
 C[Créer/Modifier des fichiers]
