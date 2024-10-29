@@ -33,7 +33,7 @@ et l’implémenter sur cosmos avec les fonctionnalités suivantes :
   - Multiplication
   - Division
   - Inversion (1/x)
-  - Racine
+  - Racine carrée
   - Puissance
   - Pourcentage (x/100)
 
