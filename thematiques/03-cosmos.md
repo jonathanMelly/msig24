@@ -44,7 +44,7 @@ et l’implémenter sur cosmos avec les fonctionnalités suivantes :
 Ensuite, ajouter les fonctionnalités suivantes :
  - Mémoire
    - possibilité de sauvegarder le résultat dans une mémoire
-   - quand on demande un opérande, `#m#` indique qu’on veut utiliser la valeur stockée en mémoire
+   - quand on demande un opérande, `$m$` indique qu’on veut utiliser la valeur stockée en mémoire
  - Conversion binaire (demande un opérande en base 10 et affiche sa valeur en binaire)
 
 ## Outils
