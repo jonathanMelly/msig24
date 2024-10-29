@@ -25,4 +25,7 @@ l'ordinateur. L'utilisateur reçoit des indications pour l'aider à deviner le b
     - Proposer à l'utilisateur de rejouer une nouvelle partie une fois qu'il a trouvé le bon nombre ou atteint le nombre
       maximum de tentatives.
     - Après chaque victoire, le nombre maximum augmente...
+    - Changer le point de vue : l’humain définit un nombre et l’ordinateur doit le découvrir
+    - Mode 2 joueurs : 1 humain VS l’ordinateur
+    - Mode 2 joueurs : 1 humain VS 1 humain
 
