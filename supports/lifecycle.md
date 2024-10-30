@@ -70,11 +70,13 @@ principe que l’outil a déjà été installé (si ce n'est pas le cas se réf�
    Par exemple, un fichier `README.md` :
    ```shell
    echo "# Mon Projet" > README.md
+   git status
    ```
 
 2. **Ajouter un deuxième fichier :**
    ```shell
    echo "Ceci est un fichier texte." > fichier.txt
+   git status
    ```
 
 3. **Ajouter ces fichiers à l'index Git :**
@@ -85,7 +87,10 @@ principe que l’outil a déjà été installé (si ce n'est pas le cas se réf�
 4. **Faire un commit :**
    ```shell
    git commit -m "Ajout de README et fichier.txt"
+
    ```
+
+> `git status` permet de voir l’état des lieux des modifications en cours...
 
 #### Étape 3 : Ajouter un remote GitHub
 
@@ -98,6 +103,9 @@ principe que l’outil a déjà été installé (si ce n'est pas le cas se réf�
    git remote add origin https://github.com/ton-utilisateur/mon_projet.git
    ```
 
+> [!TIP]  
+> En cas d’erreur de manipulation, pour détruire une mauvaise remote la commande est `git remote remove origin`
+
 #### Étape 4 : Faire un push vers GitHub
 
 1. **Pousse le commit vers GitHub :**
@@ -107,9 +115,23 @@ principe que l’outil a déjà été installé (si ce n'est pas le cas se réf�
 
    Cela envoie le commit local sur la branche `main` (ou `master`) de GitHub.
 
-#### Étape 5 : Cloner le dépôt depuis GitHub
+> [!WARNING]  
+> Selon la version ou la configuration de GIT, le nom par défaut est `master` ou `main`. Github ayant choisi
+> `main` par défaut, il faut potentiellement renommer `master` en `main` en cas d’erreur: `git branch -M main`
 
-1. **Cloner le dépôt sur un autre répertoire (ou machine) :**
+#### Étape 5 : Tag
+
+1. **Pour ajouter un tag (sorte de raccourci sur une version) :**
+   ```shell
+   git tag v1.0.0
+   ```
+
+> [!WARNING]  
+> Pour que les tags soient synchronisés, il faut ajouter une option au `push`: `git push --tags`
+
+#### Étape 6 : Cloner le dépôt depuis GitHub
+
+1. **Cloner le dépôt sur un autre répertoire (ou une autre machine) :**
    ```shell
    git clone https://github.com/ton-utilisateur/mon_projet.git
    ```
@@ -126,13 +148,23 @@ git init
 
 # Ajouter des fichiers et faire un commit
 echo "# Mon Projet" > README.md
+
+#Vérifier l’état
+git status
 echo "Ceci est un fichier texte." > fichier.txt
 git add README.md fichier.txt
+
+#Vérifier l’état
+git status
 git commit -m "Ajout de README et fichier.txt"
 
 # Ajouter un remote et faire un push vers GitHub
 git remote add origin https://github.com/ton-utilisateur/mon_projet.git
 git push -u origin main
+
+#Tag
+git tag v1.0.0
+git push --tags
 
 # Cloner le dépôt depuis GitHub
 git clone https://github.com/ton-utilisateur/mon_projet.git
@@ -250,7 +282,7 @@ Si on souhaite revenir à l'état du projet tel qu'il était après le **Commit 
 pour "vérifier" cet ancien commit :
 
 ```shell
-git restore 6a1f2de
+git switch --detach 6a1f2de
 ```
 
 Là, Git place le projet dans l'état exact où il se trouvait après le commit "Ajout du fichier de configuration". À ce
@@ -263,14 +295,17 @@ Pour revenir à l'état actuel du projet (la dernière version), il suffit de re
 appelée `master` ou `main`) :
 
 ```shell
-git checkout main
+git switch main
 ```
+
+> [!TIP]  
+> Historiquement la commande `checkout` était utilisée mais désormais `switch` et `restore` la remplacent...
 
 Ainsi, on retourne à l'état le plus récent du projet, tout en ayant navigué temporairement dans l'historique.
 
 ##### Conflits avec des modifications en cours
 
-Si des modifications sont en cours, `git restore` pourrait être prolématique et il existe une autre manière
+Si des modifications sont en cours, `git switch` pourrait être problématique et il existe une autre manière
 de faire.
 
 Voici donc un exemple montrant comment utiliser **`git worktree`** pour accéder à un tag (sachant que c’est la même chose
