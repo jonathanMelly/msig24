@@ -106,6 +106,10 @@ principe que l’outil a déjà été installé (si ce n'est pas le cas se réf�
 > [!TIP]  
 > En cas d’erreur de manipulation, pour détruire une mauvaise remote la commande est `git remote remove origin`
 
+> [!TIP]  
+> Pour contrôler l’état des remotes : `git remote -v`
+
+
 #### Étape 4 : Faire un push vers GitHub
 
 1. **Pousse le commit vers GitHub :**
