@@ -15,7 +15,7 @@ riche et plus complexe, il s'agit du `C#`.
 - [Gestion mémoire](../supports/variables1.md)
 - [Entrées / Sorties / Aléatoire](../supports/input-output-random.md)
 - [Logique et conditions](../supports/logique-conditions.md)
-- [Répétitions](TODO)
+- Répétitions
 
 ## Activités 🚝
 
