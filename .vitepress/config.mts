@@ -17,6 +17,7 @@ export default withMermaid({
     head: [
         ['link', {rel: "icon", href: "logo.svg"}],
     ],
+    srcExclude: ['slides/**'],
 
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config

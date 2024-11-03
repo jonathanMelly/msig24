@@ -12,6 +12,9 @@ riche et plus complexe, il s'agit du `C#`.
 - [CheatSheet Cosmos/Csharp](https://raw.githubusercontent.com/jonathanMelly/cosmos/integration/doc/cheatsheet-csharp.pdf)
 
 ### Bases
+
+<a href="/msig24/slides/csharp1/">Slides</a>
+
 - [Gestion mémoire](../supports/variables1.md)
 - [Entrées / Sorties / Aléatoire](../supports/input-output-random.md)
 - [Logique et conditions](../supports/logique-conditions.md)
