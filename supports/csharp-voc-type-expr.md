@@ -86,16 +86,18 @@ Les types de données les plus couramment utilisés en C# sont les suivants :
 
 1. **Types numériques** : Les types numériques sont utilisés pour stocker des nombres entiers ou décimaux. Les types
    numériques les plus couramment utilisés en C# sont :
-    * `int` : type entier signé de 32 bits.
-    * `long` : type entier signé de 64 bits.
-    * `float` : type flottant de 32 bits.
+    * `int`    : type entier signé de 32 bits.
+    * `long`   : type entier signé de 64 bits.
+    * `float`  : type flottant de 32 bits.
     * `double` : type flottant de 64 bits.
+    * `decimal`: type flottant à décimale fixe (pour calcul financier)
 2. **Type booléen** : Le type booléen est utilisé pour stocker des valeurs de vérité, qui sont soit vraies (true) soit
    fausses (false). Le type booléen en C# est `bool`.
-3. **Type char** : Le type char est utilisé pour stocker des caractères individuels. Le type char en C# est `char`.
-4. **Type string** : Le type string est utilisé pour stocker des chaînes de caractères. Le type string en C#
+3. **Type caractère** : Le type caractère est utilisé pour stocker des caractères individuels. Le type caractère en C# 
+est `char`.
+4. **Type texte** : Le type texte est utilisé pour stocker des chaînes de caractères. Le type string en C#
    est `string`.
-5. **Type DateTime** : Le type DateTime est utilisé pour stocker des dates et des heures. Le type DateTime en C#
+5. **Type Date** : Le type date est utilisé pour stocker des dates et des heures. Le type DateTime en C#
    est `DateTime`.
 
 Il est important de noter que chaque type de données a une plage de valeurs qu'il peut stocker. Par exemple, le
