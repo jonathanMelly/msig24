@@ -19,6 +19,10 @@ riche et plus complexe, il s'agit du `C#`.
 - [Entrées / Sorties / Aléatoire](../supports/input-output-random.md)
 - [Logique et conditions](../supports/logique-conditions.md)
 - Répétitions
+- [Persistence](../supports/file.md)
+
+### Conventions de codage
+- [Conventions ETML](https://ici.section-inf.ch/cc)
 
 ## Activités 🚝
 
@@ -34,6 +38,8 @@ refaire le [Million](https://labs.section-inf.ch/codelabs/cosmos-base-01-million
 - [ ] [PileOuFace](../activites/pileface/README.md)
 - [ ] [Mot de passe](../activites/motdepasse1/README.md)
 - [ ] [Fourchette](../activites/fourchette/README.md)
+- [ ] [Couleur](../activites/couleur/README.md)
+- [ ] [Moyenne](../activites/notes/README.md)
 - ...
 
 
