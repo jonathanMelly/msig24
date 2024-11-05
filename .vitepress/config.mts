@@ -28,7 +28,7 @@ export default withMermaid({
             {text: 'Supports', link: '/supports/README.html'},
             //{text: 'Activités', link: '/activites/'}
         ],
-        outline: {label: "Sur cette page"},
+        outline: {label: "Sur cette page",level:[1,4]},
         docFooter: {prev: "Précédent", next: "Suivant"},
         returnToTopLabel: "Retourner au début",
         lastUpdated: {
