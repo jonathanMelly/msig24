@@ -115,6 +115,8 @@ Dans cet exemple, nous demandons à l'utilisateur d'entrer un nombre, puis nous 
 avec `ReadLine()`. Nous convertissons ensuite l'entrée en entier avec `Convert.ToInt32()` et nous affichons le résultat
 dans la console.
 
+Pour gérer les erreurs de conversion  [voir ci-après](#contrôle-de-conversion)
+
 ### Formatage
 
 Pour formater l'affichage des nombres dans la console en C#, vous pouvez utiliser des chaînes de format. Voici quelques
@@ -122,7 +124,8 @@ exemples pour différents types de formatage :
 
 #### 1. Format numérique standard
 
-Utilisez des [chaînes de format](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) 
+Utilisez
+des [chaînes de format](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings)
 standard comme `N`, `F`, `E`, etc.
 
 ```csharp
@@ -186,7 +189,9 @@ des chaînes de format avec des espaces réservés. Voici plusieurs techniques p
 
 ### 1. Alignement avec interpolation de chaînes
 
-En utilisant les interpolations de chaînes, vous pouvez spécifier un [alignement](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated) en ajoutant un nombre dans les
+En utilisant les interpolations de chaînes, vous pouvez spécifier
+un [alignement](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated) en ajoutant un
+nombre dans les
 accolades. Un nombre positif aligne à droite, tandis qu'un nombre négatif aligne à gauche.
 
 ```csharp
@@ -253,3 +258,319 @@ Console.WriteLine(nombre.ToString("N2").PadRight(15));
 
 Ces méthodes vous permettent de contrôler l'alignement et le format des nombres dans la console, ce qui peut être
 particulièrement utile pour l'affichage de tableaux de données ou pour une présentation soignée.
+
+## Contrôle de conversion
+
+La méthode `TryParse` en C# est utilisée pour convertir une chaîne de caractères en une valeur numérique ou un autre
+type, tout en gérant les erreurs de conversion sans générer d'exception. Elle est particulièrement utile lorsqu'il est
+possible que l'entrée soit invalide (par exemple, un utilisateur pourrait entrer un texte non convertible en nombre). Si
+la conversion réussit, elle renvoie `true` et stocke le résultat dans une variable fournie ; sinon, elle renvoie
+`false`.
+
+### Structure générale
+
+```csharp
+bool TryParse(string input, out T result)
+```
+
+- **`input`** : La chaîne de caractères à convertir.
+- **`out result`** : La variable de sortie où le résultat de la conversion est stocké si celle-ci est réussie.
+- **Retourne** : Un booléen (`true` ou `false`) indiquant si la conversion a réussi.
+
+### Exemple d'utilisation avec `int.TryParse`
+
+Supposons que vous souhaitiez convertir une chaîne en entier (`int`) :
+
+```csharp
+string entree = "123";
+int nombre;
+
+if (int.TryParse(entree, out nombre))
+{
+    Console.WriteLine("Conversion réussie : " + nombre); // Affiche "Conversion réussie : 123"
+}
+else
+{
+    Console.WriteLine("Conversion échouée");
+}
+```
+
+### Exemple avec une entrée invalide
+
+Si l'entrée contient un texte non convertible en entier, `TryParse` renvoie `false` sans lever d'exception :
+
+```csharp
+string entreeInvalide = "abc";
+int nombre;
+
+if (int.TryParse(entreeInvalide, out nombre))
+{
+    Console.WriteLine("Conversion réussie : " + nombre);
+}
+else
+{
+    Console.WriteLine("Conversion échouée"); // Affiche "Conversion échouée"
+}
+```
+
+### Variantes de `TryParse`
+
+`TryParse` est disponible pour de nombreux types numériques et de date, comme `double`, `decimal`, `DateTime`, et bien
+d'autres. Voici quelques exemples d'utilisation :
+
+#### `double.TryParse`
+
+```csharp
+string entree = "12.34";
+double nombre;
+
+if (double.TryParse(entree, out nombre))
+{
+    Console.WriteLine("Conversion réussie : " + nombre); // Affiche "Conversion réussie : 12.34"
+}
+else
+{
+    Console.WriteLine("Conversion échouée");
+}
+```
+
+#### `DateTime.TryParse`
+
+```csharp
+string dateEntree = "2024-11-05";
+DateTime date;
+
+if (DateTime.TryParse(dateEntree, out date))
+{
+    Console.WriteLine("Conversion réussie : " + date.ToShortDateString()); // Affiche "Conversion réussie : 05/11/2024"
+}
+else
+{
+    Console.WriteLine("Conversion échouée");
+}
+```
+
+### Avantages de `TryParse`
+
+- **Prévention des exceptions** : Contrairement à `Parse`, `TryParse` ne lève pas d'exception en cas d'échec de
+  conversion, rendant le code plus robuste.
+- **Vérification de validité** : Permet de vérifier facilement si une entrée est convertible, idéal pour les données
+  saisies par l'utilisateur.
+- **Simplicité** : Facilite la gestion des conversions en échec sans nécessiter de gestion d'erreur avec `try-catch`.
+
+En résumé, `TryParse` est une méthode pratique et sécurisée pour convertir des chaînes de caractères tout en gérant
+facilement les erreurs de conversion.
+
+### Alternative
+
+On peut aussi utiliser `try-catch` avec `Parse` pour gérer les erreurs de conversion, mais cela
+est généralement moins performant et moins recommandé pour des conversions répétées ou lorsque les échecs sont
+probables, car lever une exception est plus coûteux que simplement vérifier un `true` ou `false` avec `TryParse`.
+
+### Utilisation de `Parse` avec `try-catch`
+
+La méthode `Parse` en C# tente de convertir une chaîne en un type spécifique. Si la conversion échoue (par exemple, si
+la chaîne contient des caractères non valides pour ce type), elle lèvera une exception `FormatException`. Vous pouvez
+utiliser `try-catch` pour gérer cette exception et effectuer un traitement en cas d'erreur.
+
+### Exemple avec `int.Parse` et `try-catch`
+
+Voici un exemple de conversion d'une chaîne en entier avec `int.Parse`, en capturant les erreurs avec `try-catch` :
+
+```csharp
+string entree = "123";
+int nombre;
+
+try
+{
+    nombre = int.Parse(entree);
+    Console.WriteLine("Conversion réussie : " + nombre); // Affiche "Conversion réussie : 123"
+}
+catch (FormatException)
+{
+    Console.WriteLine("Erreur : La chaîne n'est pas dans un format correct pour un entier.");
+}
+catch (OverflowException)
+{
+    Console.WriteLine("Erreur : La valeur est trop grande ou trop petite pour un entier.");
+}
+```
+
+### Exemple avec une entrée invalide
+
+Si l'entrée contient des caractères non numériques ou si le nombre est trop grand pour le type entier (`int`), `Parse`
+lève une exception. Voici un exemple avec une entrée invalide :
+
+```csharp
+string entreeInvalide = "abc";
+int nombre;
+
+try
+{
+    nombre = int.Parse(entreeInvalide);
+    Console.WriteLine("Conversion réussie : " + nombre);
+}
+catch (FormatException)
+{
+    Console.WriteLine("Erreur : La chaîne n'est pas dans un format correct pour un entier."); // Affiche ce message
+}
+catch (OverflowException)
+{
+    Console.WriteLine("Erreur : La valeur est trop grande ou trop petite pour un entier.");
+}
+```
+
+### Variantes avec d'autres types et exceptions
+
+Vous pouvez utiliser le même principe avec d'autres types de données comme `double`, `decimal`, ou `DateTime`. La
+méthode `Parse` pour ces types lève également une `FormatException` si la chaîne n'est pas convertible, et
+éventuellement une `OverflowException` si le nombre est hors limites du type.
+
+#### Exemple avec `double.Parse`
+
+```csharp
+string entree = "12.34";
+double nombre;
+
+try
+{
+    nombre = double.Parse(entree);
+    Console.WriteLine("Conversion réussie : " + nombre); // Affiche "Conversion réussie : 12.34"
+}
+catch (FormatException)
+{
+    Console.WriteLine("Erreur : La chaîne n'est pas dans un format correct pour un nombre décimal.");
+}
+catch (OverflowException)
+{
+    Console.WriteLine("Erreur : La valeur est trop grande ou trop petite pour un nombre décimal.");
+}
+```
+
+#### Exemple avec `DateTime.Parse`
+
+```csharp
+string dateEntree = "2024-11-05";
+DateTime date;
+
+try
+{
+    date = DateTime.Parse(dateEntree);
+    Console.WriteLine("Conversion réussie : " + date.ToShortDateString()); // Affiche "Conversion réussie : 05/11/2024"
+}
+catch (FormatException)
+{
+    Console.WriteLine("Erreur : La chaîne n'est pas dans un format correct pour une date.");
+}
+```
+
+### Différences entre `Parse` et `TryParse`
+
+- **Gestion des erreurs** : `Parse` utilise des exceptions (`try-catch`) pour gérer les erreurs de format, tandis que
+  `TryParse` utilise un retour booléen (`true` ou `false`).
+- **Performance** : `TryParse` est plus performant car il n’utilise pas d’exceptions en cas d’échec, alors que `Parse`
+  lève une exception, ce qui peut ralentir le programme s'il y a de nombreux échecs de conversion.
+- **Complexité** : `TryParse` est généralement plus simple et plus sécurisé pour valider les entrées utilisateur et
+  éviter les erreurs.
+
+En résumé, si vous attendez que les échecs de conversion soient rares ou voulez une approche de gestion d’erreur unifiée
+dans un bloc `try-catch`, `Parse` avec `try-catch` peut être acceptable. Cependant, **`TryParse` reste généralement
+préférable pour gérer des entrées utilisateur imprévisibles**.
+
+## Couleur
+
+En C#, vous pouvez changer la couleur du texte et le fond dans la console en utilisant les propriétés
+`Console.ForegroundColor` et `Console.BackgroundColor`. Il est souvent pratique de sauvegarder la couleur d'origine
+avant de la changer pour pouvoir la restaurer ensuite.
+
+Voici comment procéder :
+
+### Exemple : Changer la couleur de texte et de fond, puis restaurer les couleurs d'origine
+
+```csharp
+// Sauvegarder les couleurs actuelles
+ConsoleColor couleurTexteOriginale = Console.ForegroundColor;
+ConsoleColor couleurFondOriginale = Console.BackgroundColor;
+
+// Définir de nouvelles couleurs
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.BackgroundColor = ConsoleColor.Blue;
+
+// Afficher le texte avec les nouvelles couleurs
+Console.WriteLine("Texte en jaune sur fond bleu.");
+
+// Rétablir les couleurs d'origine
+Console.ForegroundColor = couleurTexteOriginale;
+Console.BackgroundColor = couleurFondOriginale;
+
+// Afficher un texte avec les couleurs originales pour vérification
+Console.WriteLine("Texte avec les couleurs d'origine.");
+```
+
+### Explication du code
+
+1. **Sauvegarder les couleurs actuelles** : `Console.ForegroundColor` et `Console.BackgroundColor` stockent les couleurs
+   actuelles. En les assignant à des variables (ici `couleurTexteOriginale` et `couleurFondOriginale`), vous pouvez les
+   réutiliser après avoir temporairement changé les couleurs.
+
+2. **Changer les couleurs** : Vous pouvez ensuite définir de nouvelles couleurs. Dans cet exemple, le texte devient
+   jaune (`ConsoleColor.Yellow`) et le fond devient bleu (`ConsoleColor.Blue`).
+
+3. **Afficher le texte** : Le texte affiché entre les modifications de couleur utilise les nouvelles couleurs
+   spécifiées.
+
+4. **Restaurer les couleurs d'origine** : En réaffectant les valeurs sauvegardées, vous rétablissez les couleurs
+   initiales de la console, ce qui permet de garder une apparence cohérente après l'affichage coloré.
+
+### Exemple de couleurs disponibles
+
+Voici quelques options de couleur disponibles dans `ConsoleColor` :
+
+- `ConsoleColor.Black`
+- `ConsoleColor.DarkBlue`
+- `ConsoleColor.DarkGreen`
+- `ConsoleColor.DarkCyan`
+- `ConsoleColor.DarkRed`
+- `ConsoleColor.DarkMagenta`
+- `ConsoleColor.DarkYellow`
+- `ConsoleColor.Gray`
+- `ConsoleColor.DarkGray`
+- `ConsoleColor.Blue`
+- `ConsoleColor.Green`
+- `ConsoleColor.Cyan`
+- `ConsoleColor.Red`
+- `ConsoleColor.Magenta`
+- `ConsoleColor.Yellow`
+- `ConsoleColor.White`
+
+### Astuce pour avancés : Encapsuler dans une fonction
+
+Pour rendre cela plus pratique et éviter de toujours sauvegarder et restaurer manuellement, vous pouvez encapsuler
+l'affichage coloré dans une fonction :
+
+```csharp
+void AfficherTexteCouleur(string texte, ConsoleColor couleurTexte, ConsoleColor couleurFond)
+{
+    // Sauvegarder les couleurs actuelles
+    ConsoleColor couleurTexteOriginale = Console.ForegroundColor;
+    ConsoleColor couleurFondOriginale = Console.BackgroundColor;
+
+    // Appliquer les nouvelles couleurs
+    Console.ForegroundColor = couleurTexte;
+    Console.BackgroundColor = couleurFond;
+
+    // Afficher le texte
+    Console.WriteLine(texte);
+
+    // Rétablir les couleurs d'origine
+    Console.ForegroundColor = couleurTexteOriginale;
+    Console.BackgroundColor = couleurFondOriginale;
+}
+
+// Exemple d'utilisation
+AfficherTexteCouleur("Attention !", ConsoleColor.Red, ConsoleColor.White);
+AfficherTexteCouleur("Information", ConsoleColor.Green, ConsoleColor.Black);
+```
+
+Cela vous permet d'appeler `AfficherTexteCouleur` avec le texte et les couleurs souhaitées, tout en assurant que les
+couleurs d'origine seront automatiquement restaurées.
