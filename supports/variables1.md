@@ -36,6 +36,15 @@ string message = "Bonjour, monde !";
 Dans cet exemple, nous avons déclaré quatre variables avec différents types. Nous avons également affecté une valeur à
 chaque variable.
 
+<details>
+<summary>C’est quoi le f de `3.14f`</summary>
+
+Sans mettre le 'f', le compilateur part du principe qu’un nombre à virgule est de type `double`. Le 'f' indique que c’est
+un float.
+Pour le decimal, le suffixe est `e`...
+
+</details>
+
 ## Valeurs par défaut
 
 Lorsque nous déclarons une variable en C#, elle est initialisée avec une valeur par défaut. La valeur par défaut dépend
