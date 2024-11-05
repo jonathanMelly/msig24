@@ -1,6 +1,6 @@
 # Pseudo code
 
-![pseudo.png](pseudo.png)
+![pseudo.png](assets/pseudo.png)
 
 Lorsque l'on parle de pseudocode, il s'agit d'une façon simplifiée de représenter la logique d'un algorithme sans se
 préoccuper de la syntaxe d'un langage de programmation spécifique. Le pseudocode utilise un mélange de langage naturel (
@@ -317,7 +317,7 @@ flowchart TD
 ## Origine
 Tous ces élément sont liés à l’architecture actuelle des ordinateurs basés sur le modèle de Von Neuman:
 
-![vneuman.svg](vneuman.svg)
+![vneuman.svg](assets/vneuman.svg)
 
 - Input => Lecture
 - Output => Écriture

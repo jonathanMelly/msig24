@@ -14,7 +14,7 @@ C’est la construction d’un cahier des charges élaboré à partir des besoin
 
 > Cela peut inclure un ou plusieurs prototypes afin de vérifier l’adéquation avec les besoins du client :
 
-![balancoire.jpg](balancoire.jpg)
+![balancoire.jpg](assets/balancoire.jpg)
 
 ## 🖍 Écriture
 
@@ -29,11 +29,11 @@ Autrement dit, `Git` est une sorte de `kopia` avec, en plus, un **suivi des modi
 Ainsi à chaque *snapshot* (point de sauvegarde) est associé un **message** plus ou moins détaillé qui indique ce qui a été fait.
 On peut donc **tracer** l'évolution de documents numériques comme le montre l'image suivante :
 
-![git.jpg](git.jpg)
+![git.jpg](assets/git.jpg)
 
 Peut-être le screenshot suivant sera plus parlant :
 
-![zelda-save.png](zelda-save.png)
+![zelda-save.png](assets/zelda-save.png)
 
 L'historique Git fonctionne de manière similaire à un système de sauvegarde automatique dans un jeu vidéo. Lorsqu'on
 travaille sur un projet, il est possible de créer des "sauvegardes" à des moments clés, appelées **commits**. Chaque
@@ -398,7 +398,7 @@ modifications récentes.
 
 Même si elle est aussi testée durant l’écriture (notamment avec des tests unitaires et/ou d’intégration automatisés),
 une application doit être validée avant de partir en production, pour cela, on utilise un
-[protocole de test](./TestsFonctionnelsSucrerie.docx).
+[protocole de test](assets/TestsFonctionnelsSucrerie.docx).
 
 ## Release
 
@@ -406,7 +406,7 @@ Le système de versioning peut aider dans cette étape, notamment au travers d�
 [github](https://github.com/) qui permet de faire
 une [release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
 
-![release-cosmos.png](release-cosmos.png)
+![release-cosmos.png](assets/release-cosmos.png)
 
 Dans tous les cas, un `tag` est bienvenue si pas nécessaire :
 
@@ -479,4 +479,4 @@ Sans oublier la `désinstallation` du logiciel (prise en charge par l’assistan
 Le développement d’application comporte plus que la *simple écriture de code* et ces étapes doivent être prises en
 compte notamment durant la phase de planification afin d’éviter d’avoir du retard...
 
-![delai.jpg](delai.jpg)
+![delai.jpg](assets/delai.jpg)

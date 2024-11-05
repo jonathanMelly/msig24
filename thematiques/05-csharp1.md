@@ -3,7 +3,7 @@
 Après un premier tour d'horizon il est temps de se lancer dans la programmation avec un langage plus 
 riche et plus complexe, il s'agit du `C#`.
 
-![tiobe.png](../supports/tiobe.png)
+![tiobe.png](../supports/assets/tiobe.png)
 
 ## Supports théoriques 📖
 

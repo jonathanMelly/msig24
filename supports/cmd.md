@@ -10,7 +10,7 @@ Pour le lancer, plusieurs options :
 
 - touche windows + r => cmd.exe
 - touche windows => cmd [ENTER]
-- écrire `cmd` dans une fenêtre d’explorateur ![cmd.gif](cmd.gif)
+- écrire `cmd` dans une fenêtre d’explorateur ![cmd.gif](assets/cmd.gif)
 - ...
 
 ## 2. Se déplacer dans les dossiers

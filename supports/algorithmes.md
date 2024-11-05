@@ -11,7 +11,7 @@ règles et des opérations logiques. Cette discipline est essentielle en informa
 Dans le domaine de la cuisine, une recette peut être considérée comme un programme logique qui prend des ingrédients en
 entrée et produit un plat en sortie. Voici un exemple concret :
 
-![salade1.png](salade1.png)
+![salade1.png](assets/salade1.png)
 
 ### Règle logique
 
@@ -64,7 +64,7 @@ atteindre un objectif commun.
 Un exemple concret de décomposition d'un problème complexe en petits problèmes simples est la construction d'un pont
 suspendu.
 
-![bridge.png](bridge.png)
+![bridge.png](assets/bridge.png)
 
 **Problème complexe :** Construire un pont suspendu qui relie deux rives d'un fleuve large et profond, avec des
 exigences de sécurité et de durabilité élevées.
@@ -99,7 +99,7 @@ la durabilité du pont.
 Un exemple concret de décomposition d'un problème complexe en petits problèmes simples en informatique est la recherche
 des nombres premiers.
 
-![primes.png](primes.png)
+![primes.png](assets/primes.png)
 
 **Problème complexe :** Trouver tous les nombres premiers inférieurs à un certain seuil (par exemple, 1000).
 

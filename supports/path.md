@@ -1,6 +1,6 @@
 # Chemins d’une arborescence
 
-![path.png](path.png)
+![path.png](assets/path.png)
 
 ## Chemins absolus et relatifs
 
@@ -88,7 +88,7 @@ Cela permet d'exécuter des programmes sans avoir à fournir leur chemin complet
 
 Pour modifier ou ajouter un chemin à la variable `PATH` sur Windows :
 
-![pathenv1.png](pathenv1.png)
+![pathenv1.png](assets/pathenv1.png)
 
 1. **Accéder aux variables d'environnement** :
     - Faites un clic droit sur "Ce PC" ou "Ordinateur", puis cliquez sur "Propriétés" (ou touche windows =>

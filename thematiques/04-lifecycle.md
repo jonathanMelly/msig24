@@ -11,7 +11,7 @@
 [Réaliser les opérations décrites ici](../supports/lifecycle.md#git)
 
 ### Tests
-En utilisant [ce template](../supports/TestsFonctionnelsSucrerie.docx), réaliser un protocole de test avec au moins 3
+En utilisant [ce template](../supports/assets/TestsFonctionnelsSucrerie.docx), réaliser un protocole de test avec au moins 3
 scénarios pour des dragées chocolatées.
 
 ### Projet phare : release avec installateur
