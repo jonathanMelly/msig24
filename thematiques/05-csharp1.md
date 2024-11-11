@@ -19,6 +19,7 @@ riche et plus complexe, il s'agit du `C#`.
 - [Entrées / Sorties / Aléatoire](../supports/input-output-random.md)
 - [Logique et conditions](../supports/logique-conditions.md)
 - Répétitions
+- [Mathématiques](../supports/math.md)
 - [Persistence](../supports/file.md)
 
 ### Conventions de codage
@@ -34,12 +35,13 @@ riche et plus complexe, il s'agit du `C#`.
 refaire le [Million](https://labs.section-inf.ch/codelabs/cosmos-base-01-million/index.html?index=..%2F..msig) (avec min 5 questions)
 
 ### Bases
-- [ ] [Rayon](../activites/cercle1/README.md)
+- [X] [Rayon](../activites/cercle1/README.md)
 - [ ] [PileOuFace](../activites/pileface/README.md)
 - [ ] [Mot de passe](../activites/motdepasse1/README.md)
-- [ ] [Fourchette](../activites/fourchette/README.md)
+- [X] [Fourchette](../activites/fourchette/README.md)
 - [ ] [Couleur](../activites/couleur/README.md)
 - [ ] [Moyenne](../activites/notes/README.md)
+- [ ] [Intérêts](../activites/interet/README.md)
 - ...
 
 
