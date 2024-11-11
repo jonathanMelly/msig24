@@ -68,8 +68,21 @@ spécial, vous pouvez utiliser les méthodes suivantes de la classe Char :
 * `Char.IsLetterOrDigit(c)` : Retourne true si le caractère `c` est une lettre ou un chiffre.
 * `Char.IsSymbol(c)` : Retourne true si le caractère `c` est un caractère spécial.
 
+> Attention, Char.IsSymbol() ne fait peut-être pas ce qu’on pense...
+> Si besoin, voici une alternative:
+
+```csharp
+foreach(char character in "ab_cd$")
+{
+    if(character == '_' || character == '$')
+    {
+        Console.Write("_ ou $");
+    }
+}
+```
+
 <details>
-<summary>Voir un exemple de solution</summary>
+<summary>Voir un exemple non contractuel et non garanti fonctionnel</summary>
 
 ```csharp
 string motDePasse = "Test123!";
