@@ -156,12 +156,12 @@ tables de vérité pour les opérateurs `&&`, `||` et `!` :
 | F | T | F      |
 | F | F | F      |
 
-| a | b | a || b |
-|---|---|-------|
-| T | T | T |
-| T | F | T |
-| F | T | T |
-| F | F | F |
+| a | b | a \|\| b |
+|---|---|----------|
+| T | T | T        |
+| T | F | T        |
+| F | T | T        |
+| F | F | F        |
 
 | a | !a |
 |---|----|
