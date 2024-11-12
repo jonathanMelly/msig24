@@ -17,10 +17,10 @@ riche et plus complexe, il s'agit du `C#`.
 
 - [Gestion mémoire](../supports/variables1.md)
 - [Entrées / Sorties / Aléatoire](../supports/input-output-random.md)
-- [Logique et conditions](../supports/logique-conditions.md)
-- [Répétitions](../supports/repetitions.md)
-- [Mathématiques](../supports/math.md)
-- [Persistence](../supports/file.md)
+- [Logique et conditions](../supports/logique-conditions.md) | [kahoot](https://create.kahoot.it/details/307c3740-c9e2-4f2f-8f94-d8668d7953c8)
+- [Répétitions](../supports/repetitions.md) | [Kahoot](https://create.kahoot.it/details/e2ba98fd-c89f-44ce-a5ff-b8c3538a5301)
+- [Mathématiques](../supports/math.md) | [Kahoot](https://create.kahoot.it/details/08e07863-1309-40c0-a599-c171e5cfce08)
+- [Persistence](../supports/file.md) | [Kahoot](https://create.kahoot.it/details/e65d5f12-5156-40df-9fe8-cf272aac9293)
 
 ### Conventions de codage
 - [Conventions ETML](https://ici.section-inf.ch/cc)
