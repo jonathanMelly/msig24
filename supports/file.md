@@ -4,12 +4,12 @@ En C#, les méthodes `File.ReadAllText` et `File.ReadAllLines` offrent deux appr
 partir d'un fichier. Voici comment les utiliser pour sauvegarder et charger des données de manière simple et
 contextuelle.
 
-### 1. **File.WriteAllText** : Sauvegarder des données dans un fichier
+## File.WriteAllText : Sauvegarder des données dans un fichier
 
 Avant de charger des données, il faut d’abord les sauvegarder. `File.WriteAllText` permet de sauvegarder une chaîne de
 texte dans un fichier en remplaçant tout le contenu existant.
 
-#### Exemple de sauvegarde
+### Exemple de sauvegarde
 
 Supposons que vous vouliez sauvegarder une liste de noms avec des retours de ligne entre chaque nom.
 
@@ -29,12 +29,12 @@ Console.WriteLine("Les noms ont été sauvegardés dans le fichier.");
   soit écrit sur une ligne distincte dans le fichier. `File.WriteAllText` sauvegarde ce contenu dans `noms.txt`,
   écrasant tout contenu existant.
 
-### 2. **File.ReadAllText** : Charger l'intégralité d'un fichier en une seule chaîne
+## File.ReadAllText : Charger l'intégralité d'un fichier en une seule chaîne
 
 La méthode `File.ReadAllText` lit tout le contenu d’un fichier en une seule chaîne de texte. Elle est utile si vous avez
 un petit fichier ou si vous n'avez pas besoin de traiter ligne par ligne.
 
-#### Exemple de chargement avec `File.ReadAllText`
+### Exemple de chargement avec `File.ReadAllText`
 
 ```csharp
 // Lire tout le contenu du fichier dans une seule chaîne
@@ -66,12 +66,12 @@ foreach (string nom in noms)
   tableau, où chaque nom est un élément distinct. `StringSplitOptions.RemoveEmptyEntries` évite d'inclure des lignes
   vides.
 
-### 3. **File.ReadAllLines** : Charger un fichier ligne par ligne
+## File.ReadAllLines : Charger un fichier ligne par ligne
 
 La méthode `File.ReadAllLines` lit le fichier ligne par ligne et renvoie chaque ligne sous forme de tableau de chaînes.
 Elle est particulièrement utile si vous devez traiter chaque ligne individuellement.
 
-#### Exemple de chargement avec `File.ReadAllLines`
+### Exemple de chargement avec `File.ReadAllLines`
 
 ```csharp
 // Lire toutes les lignes du fichier dans un tableau de chaînes
@@ -132,3 +132,7 @@ foreach (string ligne in lignes)
 - **Charger en un tableau de lignes** : `File.ReadAllLines` lit le fichier ligne par ligne dans un tableau de chaînes.
 
 Ces méthodes sont pratiques pour travailler avec des fichiers de texte simples dans des applications C#.
+
+## Append
+Les fonctions `Write` ont pour effet d’écraser le contenu précédent du fichier. Il existe les alternatives nommées
+`AppendAllText` et `AppendAllLines` pour ajouter du contenu sans effacer l’existant...
