@@ -178,34 +178,17 @@ et `!`, et les tables de vérité sont un moyen utile de visualiser les résulta
 
 ### Simplifications
 
-Pour simplifier une expression booléenne en algèbre de Boole, vous pouvez utiliser les lois de l'algèbre de Boole et les
-propriétés des opérateurs logiques. Voici quelques conseils pour simplifier une expression booléenne :
-
-1. Utilisez les lois de l'algèbre de Boole pour simplifier les expressions. Par exemple, vous pouvez utiliser la loi de
-   commutativité pour interchanger les termes d'une expression, ou la loi d'associativité pour regrouper les termes
-   d'une expression.
-2. Utilisez les propriétés des opérateurs logiques pour simplifier les expressions. Par exemple, vous pouvez utiliser la
-   propriété de distributivité pour distribuer un opérateur sur les termes d'une expression, ou la propriété
-   d'idempotence pour simplifier les expressions qui contiennent des termes identiques.
-3. Utilisez les tables de vérité pour simplifier les expressions. Les tables de vérité vous permettent de visualiser les
-   résultats des opérations logiques et de simplifier les expressions en conséquence.
-4. Utilisez les techniques de factorisation pour simplifier les expressions. La factorisation consiste à extraire un
-   facteur commun des termes d'une expression et à le mettre en évidence.
-5. Utilisez les techniques de substitution pour simplifier les expressions. La substitution consiste à remplacer une
-   expression par une autre expression équivalente.
+Pour simplifier une expression booléenne en algèbre de Boole, vous pouvez utiliser les [lois de l'algèbre de Boole](#algèbre-de-bool-avec-exemples) et les
+propriétés des opérateurs logiques.
 
 Voici un exemple de simplification d'une expression booléenne en utilisant les lois de l'algèbre de Boole et les
 propriétés des opérateurs logiques :
 
-Expression initiale : `(a && b) || (!a && !b)`
+Expression initiale : `a || (!a && !b)`
 
-Utilisation de la loi de distributivité : `(a || !a) && (b || !b)`
+Utilisation de la loi de distributivité : `(a || !a) && (a || !b)`
 
-Utilisation de la propriété d'idempotence : `(a || !a) && (b || !b)`
-
-Simplification : `true && true`
-
-Résultat final : `true`
+Utilisation de la complémentarité : `a || !b`
 
 #### Algèbre de bool avec exemples
 
