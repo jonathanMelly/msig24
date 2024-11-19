@@ -52,3 +52,14 @@ refaire le [Million](https://labs.section-inf.ch/codelabs/cosmos-base-01-million
 - [ ] [ToucherCouler](../activites/bataille-navale/README.md)
 - [ ] [Morpion1](../activites/morpion1/README.md)
 - ...
+
+## Projet phare 💡
+Il s’agit de faire une 3ème version de la [calculatrice](03-cosmos.md#projet-phare--calculatrice) en incluant :
+
+- contrôle de saisie
+- fonctions min, max et moyenne
+
+### Version `spéciale`
+- Implémenter le pavé numérique sur la console en utilisant les touches fléchées et ENTER à l’image de :
+- 
+![calc1.gif](assets/calc1.gif)
