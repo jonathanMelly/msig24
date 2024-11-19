@@ -1,10 +1,56 @@
 # Utilitaires mathématiques
 
+## Base
+
+De base, on peut utiliser les opérateurs suivants :
+ 
+- \+ (plus)
+- \- (moins)
+- \* (fois)
+- / (divisé)
+- % (modulo)
+
+### Division
+⚠ Attention, une division entre 2 nombres entiers donne un nombre entier !
+> Corollaire : le numérateur ou le dénominateur doit être à virgule pour obtenir une division non entière
+
+```csharp
+int two = 8/3; // 2
+double twoPointSixSixSix = 8/3.0; // 2.666666665
+```
+
+### Modulo
+Pour rappel, le module correspond au `reste de la division entière`.
+
+Ainsi :
+
+```csharp
+int result = 4 % 2;//0
+result = 5 % 2;//1
+```
+
+C’est très pratique pour savoir si un nombre est pair ou impair :
+```csharp
+int number = int.Parse(Console.ReadLine());
+bool even = number % 2 == 0; //pair
+
+bool odd  = number % 2 != 0; //impair
+bool odd2 = number % 2 == 1; //impaire (autre manière)
+
+//Dans un if
+if(number % 2 == 0)
+{
+    Console.Write($"{number} est pair");
+}
+```
+
+## Math
+
 La bibliothèque `Math` en C# propose une large gamme de fonctions mathématiques utiles pour effectuer des calculs
 numériques courants. Voici un aperçu des fonctions les plus importantes avec des exemples pratiques pour comprendre leur
 utilisation.
 
-### 1. **Math.Min** et **Math.Max**
+## Math.Min et Math.Max
 
 Ces fonctions permettent de trouver respectivement la valeur minimale et la valeur maximale entre deux nombres.
 
@@ -13,7 +59,7 @@ int minValue = Math.Min(5, 10); // Renvoie 5
 int maxValue = Math.Max(5, 10); // Renvoie 10
 ```
 
-### 2. **Math.Round**
+## Math.Round
 
 `Math.Round` arrondit un nombre décimal au plus proche entier ou au nombre de décimales spécifié.
 
@@ -23,7 +69,7 @@ double roundedValue = Math.Round(value); // Renvoie 5
 double roundedToTwoDecimals = Math.Round(value, 2); // Renvoie 4.57
 ```
 
-### 3. **Math.PI**
+## Math.PI
 
 La constante `Math.PI` représente la valeur de π (pi), utile pour les calculs trigonométriques.
 
@@ -31,7 +77,7 @@ La constante `Math.PI` représente la valeur de π (pi), utile pour les calculs 
 double circleCircumference = 2 * Math.PI * radius;
 ```
 
-### 4. **Math.Pow**
+## Math.Pow
 
 `Math.Pow` permet de calculer la puissance d’un nombre. Elle prend deux arguments : le nombre de base et l'exposant.
 
@@ -39,7 +85,7 @@ double circleCircumference = 2 * Math.PI * radius;
 double power = Math.Pow(2, 3); // Renvoie 8, car 2^3 = 8
 ```
 
-### 5. **Math.Sqrt**
+## Math.Sqrt
 
 Cette fonction retourne la racine carrée d'un nombre.
 
@@ -47,7 +93,7 @@ Cette fonction retourne la racine carrée d'un nombre.
 double squareRoot = Math.Sqrt(16); // Renvoie 4
 ```
 
-### 6. **Math.Abs**
+## Math.Abs
 
 `Math.Abs` calcule la valeur absolue d’un nombre, c’est-à-dire sa valeur sans tenir compte du signe.
 
@@ -55,7 +101,7 @@ double squareRoot = Math.Sqrt(16); // Renvoie 4
 int absValue = Math.Abs(-10); // Renvoie 10
 ```
 
-### 7. **Math.Ceiling** et **Math.Floor**
+## Math.Ceiling** et Math.Floor
 
 - `Math.Ceiling` arrondit un nombre à l’entier supérieur.
 - `Math.Floor` arrondit un nombre à l’entier inférieur.
@@ -65,7 +111,7 @@ double ceilingValue = Math.Ceiling(4.2); // Renvoie 5
 double floorValue = Math.Floor(4.8); // Renvoie 4
 ```
 
-### 8. **Math.Truncate**
+## Math.Truncate
 
 Cette fonction tronque la partie décimale d'un nombre, ne gardant que la partie entière sans arrondir.
 
@@ -73,7 +119,7 @@ Cette fonction tronque la partie décimale d'un nombre, ne gardant que la partie
 double truncatedValue = Math.Truncate(4.8); // Renvoie 4
 ```
 
-### 9. **Math.Sign**
+## Math.Sign
 
 `Math.Sign` renvoie 1 si le nombre est positif, -1 si le nombre est négatif, et 0 si le nombre est nul.
 
@@ -81,7 +127,7 @@ double truncatedValue = Math.Truncate(4.8); // Renvoie 4
 int sign = Math.Sign(-15); // Renvoie -1
 ```
 
-### 10. **Math.Sin, Math.Cos, Math.Tan**
+## Math.Sin, Math.Cos, Math.Tan
 
 Ces fonctions calculent respectivement le sinus, le cosinus et la tangente d'un angle donné en radians.
 
@@ -92,7 +138,7 @@ double cosine = Math.Cos(radians); // Calcul du cosinus
 double tangent = Math.Tan(radians); // Calcul de la tangente
 ```
 
-### 11. **Convertir des degrés en radians et inversement**
+### Convertir des degrés en radians et inversement
 
 En C#, les fonctions trigonométriques utilisent des radians. Pour convertir un angle en degrés en radians ou
 inversement, on peut utiliser les formules suivantes :
@@ -114,5 +160,3 @@ double hypotenuse = Math.Sqrt(Math.Pow(sideA, 2) + Math.Pow(sideB, 2)); // Utili
 Console.WriteLine($"L'hypoténuse est : {hypotenuse}"); // Renvoie 5
 ```
 
-En maîtrisant ces fonctions de la bibliothèque `Math`, vous pouvez réaliser de nombreux calculs mathématiques essentiels
-dans vos programmes C#.
