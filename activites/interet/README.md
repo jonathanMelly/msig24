@@ -8,8 +8,7 @@ estimer leur paiement mensuel et le montant total des intérêts payés pour dif
 1. Calculer le paiement mensuel en fonction d'un montant de prêt, d'un taux d'intérêt annuel et d'une durée de
    remboursement (en années).
 2. Calculer le montant total des intérêts payés sur la durée du prêt.
-3. Limiter le paiement minimum et maximum mensuel (combien on rembourse en plus des intérêts) avec les valeurs données par la banque.
-4. Arrondir les résultats de manière adéquate pour les afficher aux clients.
+3. Arrondir les résultats de manière adéquate pour les afficher aux clients.
 
 ## Formules
 
@@ -29,33 +28,42 @@ où :
     - Le montant du prêt (exemple : 10 000 CHF).
     - Le taux d'intérêt annuel en pourcentage (exemple : 5 %).
     - La durée du prêt en années (exemple : 5 ans).
-    - Le paiement minimum mensuel accepté par la banque (exemple : 100 CHF).
-    - Le paiement maximum mensuel accepté par la banque (exemple : 1 000 CHF).
 
 2. **Calculs** :
     - Calculez le paiement mensuel brut en utilisant la formule ci-dessus avec `Math.Pow`.
-    - Limitez le paiement mensuel brut entre les valeurs minimum et maximum fournies par la banque en utilisant
-      `Math.Min` et `Math.Max`.
     - Calculez le montant total des intérêts payés sur la durée du prêt, qui est :
       $\text{Total des Intérêts} = (\text{Paiement Mensuel} \times n) - P$
+    - Détailler la part d’intérêt et de remboursement
     - Arrondissez les résultats à deux décimales en utilisant `Math.Round`.
 
 3. Affichez les résultats arrondis.
 
-## Exemple de calcul
+## Exemples de calcul
+V1 (attention l’arnaque)
+```text
+Entrez le montant du prêt (CHF) : 10000
+Entrez le taux d'intérêt annuel (%) : 55
+Entrez la durée du prêt en années : 5
 
-Imaginons un prêt de 10 000 CHF, remboursé sur 5 ans (60 mois) avec un taux d'intérêt de 5 % par an.
+--- Résultats ---
+Frais mensuels       : 491.75 CHF
+-->Dont  intérêts    : 325.09 CHF
+Montant total versé  : 29505.16 CHF
+Part la plus élevée des frais: 325.09 CHF
+```
 
-1. Supposons que le **paiement mensuel** calculé soit de 188,71 CHF.
-2. Sur 60 mois, le **montant total des paiements** sera donc $188,71 \times 60 = 11 322,60$ CHF.
-3. En soustrayant le montant initial du prêt, soit 10 000 CHF, on obtient :
-   $\text{Total des Intérêts} = 11 322,60 - 10 000 = 1 322,60 \, CHF$
+V2
+```text
+Entrez le montant du prêt (CHF) : 10000
+Entrez le taux d'intérêt annuel (%) : 5
+Entrez la durée du prêt en années : 5
 
-Le montant des intérêts est donc de 1 322,60 CHF, et c’est ce que l’on obtient en appliquant la formule $(\text{Paiement
-Mensuel} \times n) - P$.
-
-Cela montre la différence entre le montant que l’emprunteur rembourse et le montant qu’il a initialement emprunté, qui
-représente donc uniquement les frais d’intérêt.
+--- Résultats ---
+Frais mensuels       : 188.71 CHF
+-->Dont  intérêts    : 22.05 CHF
+Montant total versé  : 11322.74 CHF
+Part la plus élevée des frais: 166.66 CHF
+```
 
 ## Exemple de solution (pour comparer)
 
@@ -79,12 +87,6 @@ class LoanCalculator
         Console.Write("Entrez la durée du prêt en années : ");
         int loanDurationYears = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("Entrez le paiement minimum mensuel accepté (CHF) : ");
-        double minMonthlyPayment = Convert.ToDouble(Console.ReadLine());
-
-        Console.Write("Entrez le paiement maximum mensuel accepté (CHF) : ");
-        double maxMonthlyPayment = Convert.ToDouble(Console.ReadLine());
-
         // Calcul du taux d'intérêt mensuel et du nombre total de paiements
         double monthlyInterestRate = annualInterestRate / 100 / 12;
         int totalPayments = loanDurationYears * 12;
@@ -93,20 +95,25 @@ class LoanCalculator
         double rawMonthlyPayment = principal * monthlyInterestRate * Math.Pow(1 + monthlyInterestRate, totalPayments) /
                                    (Math.Pow(1 + monthlyInterestRate, totalPayments) - 1);
 
-        // Limite entre le paiement minimum et maximum
-        double monthlyPayment = Math.Max(minMonthlyPayment, Math.Min(rawMonthlyPayment, maxMonthlyPayment));
 
+        double totalPaid = rawMonthlyPayment * totalPayments;
         // Calcul du total des intérêts payés
-        double totalInterest = (monthlyPayment * totalPayments) - principal;
+        double totalInterest = totalPaid - principal ;
 
         // Arrondi des valeurs
-        monthlyPayment = Math.Round(monthlyPayment, 2);
-        totalInterest = Math.Round(totalInterest, 2);
+        totalInterest = Math.Round(totalInterest,2);
+        rawMonthlyPayment = Math.Round(rawMonthlyPayment,2);
+        totalPaid = Math.Round(totalPaid, 2);
+        double rawInterestPayment = Math.Round(totalInterest / totalPayments, 2);
 
         // Affichage des résultats
         Console.WriteLine("\n--- Résultats ---");
-        Console.WriteLine($"Paiement Mensuel : {monthlyPayment} CHF");
-        Console.WriteLine($"Total des Intérêts Payés : {totalInterest} CHF");
+        Console.WriteLine($"Frais mensuels       : {rawMonthlyPayment} CHF");
+        Console.WriteLine($"-->Dont  intérêts    : {rawInterestPayment} CHF");
+        Console.WriteLine($"Montant total versé  : {totalPaid} CHF");
+
+        Console.WriteLine($"Part la plus élevée des frais: {Math.Max(rawMonthlyPayment-rawInterestPayment,rawInterestPayment)} CHF");
+
     }
 }
 ```
