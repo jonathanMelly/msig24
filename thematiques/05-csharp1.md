@@ -37,7 +37,7 @@ refaire le [Million](https://labs.section-inf.ch/codelabs/cosmos-base-01-million
 ### Bases
 - [X] [Rayon](../activites/cercle1/README.md)
 - [X] [PileOuFace](../activites/pileface/README.md)
-- [ ] [Mot de passe](../activites/motdepasse1/README.md)
+- [X] [Mot de passe](../activites/motdepasse1/README.md)
 - [X] [Fourchette](../activites/fourchette/README.md)
 - [ ] [Couleur](../activites/couleur/README.md)
 - [ ] [Moyenne](../activites/notes/README.md)

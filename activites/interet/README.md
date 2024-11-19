@@ -8,7 +8,7 @@ estimer leur paiement mensuel et le montant total des intérêts payés pour dif
 1. Calculer le paiement mensuel en fonction d'un montant de prêt, d'un taux d'intérêt annuel et d'une durée de
    remboursement (en années).
 2. Calculer le montant total des intérêts payés sur la durée du prêt.
-3. Limiter le paiement minimum et maximum mensuel avec les valeurs données par la banque.
+3. Limiter le paiement minimum et maximum mensuel (combien on rembourse en plus des intérêts) avec les valeurs données par la banque.
 4. Arrondir les résultats de manière adéquate pour les afficher aux clients.
 
 ## Formules
