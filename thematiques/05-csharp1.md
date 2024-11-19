@@ -42,6 +42,7 @@ refaire le [Million](https://labs.section-inf.ch/codelabs/cosmos-base-01-million
 - [ ] [Couleur](../activites/couleur/README.md)
 - [ ] [Moyenne](../activites/notes/README.md)
 - [ ] [Intérêts](../activites/interet/README.md)
+- [ ] [Matrix](../activites/matrix/README.md)
 - [ ] [Recettes](../activites/recette/README.md) 
 - ...
 
