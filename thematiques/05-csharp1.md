@@ -54,12 +54,31 @@ refaire le [Million](https://labs.section-inf.ch/codelabs/cosmos-base-01-million
 - ...
 
 ## Projet phare 💡
-Il s’agit de faire une 3ème version de la [calculatrice](03-cosmos.md#projet-phare--calculatrice) en incluant :
 
+Il s’agit de faire une 3ème version de la [calculatrice](03-cosmos.md#projet-phare--calculatrice) 🧮 en incluant :
+
+- dépôt git pour l'historique des modifications
+  - au moins 3 commits
+- code source respectant les [conventions de codage](http://ici.section-inf.ch/cc)
 - contrôle de saisie
 - fonctions min, max et moyenne
+- arrondi configurable au démarrage :
+  - soit pas d'arrondi
+  - soit arrondi à X décimales (X defini par l'utilisateur)
+  - valable pour tous les résultats calculés
+- sauvegarde automatique des résultats dans un fichier nommé avec la date/heure du moment (extension .txt) :
+```csharp
+string dateString = DateTime.Now.ToString("dd.MM.yyyy_HH-mm-ss");
+//23.11.2024_08-45-02
+```
+- branding : la calculette est personnalisée selon un fichier `brand.txt` qui contient le nom du sponsor
+  - dans le titre on affiche "sponsorisé par ....." (et les ... sont remplacés par le contenu de `brand.txt`)
+
+### Livrable
+- une archive avec le projet complet
+  - y compris le dossier .git (dépôt)
 
 ### Version `spéciale`
 - Implémenter le pavé numérique sur la console en utilisant les touches fléchées et ENTER à l’image de :
-- 
+
 ![calc1.gif](assets/calc1.gif)
