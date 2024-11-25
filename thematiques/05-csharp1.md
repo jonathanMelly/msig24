@@ -72,11 +72,13 @@ string dateString = DateTime.Now.ToString("dd.MM.yyyy_HH-mm-ss");
 //23.11.2024_08-45-02
 ```
 - branding : la calculette est personnalisée selon un fichier `brand.txt` qui contient le nom du sponsor
-  - dans le titre on affiche "sponsorisé par ....." (et les ... sont remplacés par le contenu de `brand.txt`)
+  - dans le titre, on affiche "sponsorisé par ....." (et les `...` sont remplacés par le contenu de `brand.txt`)
+- tests : un PDF avec au moins 3 scénarios (voir [ci-dessous](#livrable))
 
 ### Livrable
 - une archive avec le projet complet
   - y compris le dossier .git (dépôt)
+  - y compris un PDF avec au moins 3 [scénarios de test](../supports/assets/TestsFonctionnelsSucrerie.docx)
 
 ### Version `spéciale`
 - Implémenter le pavé numérique sur la console en utilisant les touches fléchées et ENTER à l’image de :
