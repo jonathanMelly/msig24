@@ -101,7 +101,7 @@ if (x > 5)
 ```
 
 Dans cet exemple, `x` est déclarée dans le bloc et est accessible partout à partir de sa déclaration. Par contre,
-`y` est déclarée dans le bloc `if` et n'est accessible que dans ce bloc.
+`y` est déclarée dans le bloc `if` et n'est disponible que dans ce bloc.
 
 Ici, `compteur` est une variable d'instance qui est accessible dans toutes les méthodes de la classe `ExempleClasse`.
 
