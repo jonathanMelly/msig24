@@ -40,7 +40,19 @@ Aller dans le dossier WWW (c:\msig\web ou le dossier choisi après le `-t`) et �
 echo "Hello master MSIG"
 ```
 
-Sauvegarder le fichier 
+Sauvegarder le fichier, tester et constater les dégâts :
+
+> [!CAUTION]
+> Parse error: syntax error, unexpected end of file ...
+
+Ceci indique une erreur de programmation...
+
+#### Correction
+> Ajouter un `;` à la fin de la commande `echo` pour corriger l’erreur :
+```php
+<?php 
+echo "Hello master MSIG";
+```
 
 ### Test
 Lancer le navigateur à l'adresse http://localhost/msig/ 
