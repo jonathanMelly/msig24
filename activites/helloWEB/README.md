@@ -9,10 +9,13 @@ Pour PHP, on a besoin d’un serveur WEB qui connaît le PHP habituellement coup
 #### Version minimale
 
 ##### PHP
-Le plus simple pour PHP est d’utiliser nomad pour installer php en local :
+Le plus simple pour PHP est d’utiliser [nomad](https://github.com/jonathanMelly/nomad) pour installer php en local :
 
 ```shell
-nomad -version 8.3 install nomad
+nomad -version 8.3 install php
+```
+puis
+```shell
 cd apps
 cd php
 php -S localhost:8080 -t c:\msig\prog\web
