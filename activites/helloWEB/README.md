@@ -22,7 +22,7 @@ php -S localhost:8080 -t c:\msig\prog\web
 ```
 
 ##### MariaDB
-En attendant que [nomad](https://github.com/jonathanMelly) offre un package `MariaDb`, on peut utiliser :
+En attendant que [nomad](https://github.com/jonathanMelly/nomad) offre un package `MariaDb`, on peut utiliser :
 [MariaDB portable](https://mariadb.org/download/?t=mariadb&o=true&p=mariadb&r=5.5.29&os=windows&cpu=x86_64&pkg=msi&mirror=archive)
 
 #### Alternatives
