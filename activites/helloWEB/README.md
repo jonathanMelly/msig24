@@ -1,15 +1,36 @@
 # Hello WEB
 
 ## Activité 1: Hello
-Pour débuter en PHP orienté WEB (on peut aussi faire du PHP hors WEB), voici une suggestion:
+Pour débuter en PHP orienté WEB (on peut aussi faire du PHP hors WEB), voici une suggestion :
 
 ### Setup
-Installer un environnement WEB (serveur WEB, PHP et serveur de base de données)
+Pour PHP, on a besoin d’un serveur WEB qui connaît le PHP habituellement couplé à un serveur de base de données.
 
-[docker](https://github.com/jonathanMelly/docker/blob/main/web1.md) ou uwamp ou easyphp
+#### Version minimale
+
+##### PHP
+Le plus simple pour PHP est d’utiliser nomad pour installer php en local :
+
+```shell
+nomad -version 8.3 install nomad
+cd apps
+cd php
+php -S localhost:8080 -t c:\msig\prog\web
+```
+
+##### MariaDB
+En attendant que [nomad](https://github.com/jonathanMelly) offre un package `MariaDb`, on peut utiliser :
+[MariaDB portable](https://mariadb.org/download/?t=mariadb&o=true&p=mariadb&r=5.5.29&os=windows&cpu=x86_64&pkg=msi&mirror=archive)
+
+#### Alternatives
+Il existe d’autres manière de mettre en place un environnement :
+
+- [docker](https://github.com/jonathanMelly/docker/blob/main/web1.md)
+- uwamp
+- easyphp
 
 ### Index
-Aller dans le dossier WWW et éditer/créer le fichier index.php dans le dossier msig (à créer) avec notepad++ :
+Aller dans le dossier WWW (c:\msig\web ou le dossier choisi après le `-t`) et éditer/créer le fichier index.php dans le dossier msig (à créer) avec notepad++ :
 
 ```php
 <?php 
@@ -26,7 +47,7 @@ Vérifier que la page affiche le texte 'Hello master MSIG'
 ## Activité 2 : Tuto "apprentice" et références
 
 ### Tutos phpapprentice
-Pour apprendre le langage PHP, je suggère la ressource suivante: https://phpapprentice.com/
+Pour apprendre le langage PHP, je suggère la ressource suivante : https://phpapprentice.com/
 
 Vous pouvez donc aller **jusqu'au chapitre 10** pour découvrir la syntaxe de PHP…
 
