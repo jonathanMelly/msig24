@@ -26,7 +26,7 @@ En attendant que [nomad](https://github.com/jonathanMelly/nomad) offre un packag
 [MariaDB portable](https://mariadb.org/download/?t=mariadb&o=true&p=mariadb&r=5.5.29&os=windows&cpu=x86_64&pkg=msi&mirror=archive)
 
 #### Alternatives
-Il existe d’autres manière de mettre en place un environnement :
+Il existe d’autres manières de mettre en place un environnement :
 
 - [docker](https://github.com/jonathanMelly/docker/blob/main/web1.md)
 - uwamp
