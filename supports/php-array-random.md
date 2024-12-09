@@ -77,6 +77,53 @@ array(6) {
 */
 ```
 
+### Supprimer un élément d'un tableau
+
+En PHP, on peut supprimer un élément d'un tableau en utilisant la fonction `unset()`. Cependant, cela ne réindexe pas
+automatiquement le tableau, ce qui peut laisser des "trous" dans les index. Si une réindexation est nécessaire, on peut
+utiliser `array_values()`.
+
+
+Soit la liste suivante :
+
+```php
+// Liste d'élèves
+$eleves = ["Alice", "Bob", "Charlie", "Diana", "Eve"];
+```
+
+#### Supprimer un élément sans réindexer :
+
+```php
+
+unset($eleves[2]); // Supprime l'élément à l'index 2 ("Charlie")
+var_dump($eleves);
+/*
+Résultat :
+array(4) {
+  [0]=> string(5) "Alice"
+  [2]=> string(7) "Bob"
+  [3]=> string(5) "Diana"
+  [4]=> string(3) "Eve"
+}
+*/
+```
+
+#### Supprimer un élément et réindexer :
+```php
+// Réindexer le tableau
+$eleves = array_values($eleves);
+var_dump($eleves);
+/*
+Résultat :
+array(4) {
+[0]=> string(5) "Alice"
+[1]=> string(3) "Bob"
+[2]=> string(5) "Diana"
+[3]=> string(3) "Eve"
+}
+*/
+```
+
 ## Parcourir un tableau avec une boucle
 
 ### Exemple avec `foreach` :
