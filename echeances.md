@@ -1,7 +1,13 @@
-# Prochaines échéances
+# Travail en cours 👩‍💻
 
-## Mercredi 27.11
-[Calculatrice Csharp](thematiques/05-csharp1.md#projet-phare-)
+- [ ] Tirage au sort de 2 élèves (V1 et V2)
+- [ ] Compteur simple
+- [ ] [Exercices](thematiques/06-web1.md#pratique)
 
-## Lundi 02.12
-Test cosmos
+# Prochaines échéances 📅
+
+## Calculatrice PHP 🧮
+TBD
+
+## Test PHP 🏅
+TBD
