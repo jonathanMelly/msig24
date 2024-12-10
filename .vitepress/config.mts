@@ -24,6 +24,7 @@ export default withMermaid({
         logo: 'logo.svg',
         nav: [
             {text: 'Accueil', link: '/'},
+            {text: 'Actuellement', link: '/echeances.html'},
             {text: 'Thématiques', link: '/thematiques/README.html'},
             {text: 'Supports', link: '/supports/README.html'},
             //{text: 'Activités', link: '/activites/'}
