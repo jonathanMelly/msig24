@@ -69,10 +69,10 @@ export default withMermaid({
                     collapsed:
                         true,
                     items:
-                        glob.sync('activites/**/README.md', {ignore: 'activites/README.md', posix: true})
+                        glob.sync('activites/**/README.md', {posix: true})
                             .map(file => ({
                                 text: `${file.split("/")[1]}`,
-                                link: `/${file.replace("README", "index")}`
+                                link: `/${file}`
                             })).reverse()
                 }
             ],
