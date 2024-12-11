@@ -205,6 +205,8 @@ Voici maintenant une présentation des principaux éléments HTML :
 - **`<h1>` à `<h6>`** : Titres de niveaux différents.
 - **`<br>`** : Saut de ligne.
 - **`&nbsp;`** : Espace insécable.
+- **`<a>`** : Lien hypertexte (avec la propriété `href`)
+- **`<img>`** : Afficher une image (avec la propriété `src` et `alt`)
 
 ### Exemple : Pad Numérique
 
@@ -292,8 +294,14 @@ Voici maintenant une présentation des principaux éléments HTML :
 
 <p class="footer-text">
     Note : Le pad numérique présenté ici est purement visuel et n’a pas de
-    fonctionnalité interactive sans PHP ou JavaScript.
+    fonctionnalité interactive sans <a href="https://php.net">PHP</a> ou JavaScript.
 </p>
+
+<p>
+    Et voici un joli clavier
+   <img src="https://raw.githubusercontent.com/jonathanMelly/msig24/refs/heads/main/supports/assets/clavier.png" alt="clavier" />   
+</p>
+
 </body>
 </html>
 ```
@@ -315,8 +323,11 @@ Voici maintenant une présentation des principaux éléments HTML :
 
 5. **`&nbsp;` :**
     - Utilisé dans le bouton central vide pour maintenir un espace insécable.
+   
+6. **`<a href="https://php.net">` :**
+   - Pour aller directement sur le site de PHP
 
-6. **CSS :**
+7. **CSS :**
     - Le design est simple : une grille de 3 colonnes, des boutons arrondis, et des effets au survol.
 
 ### Résultat Attendu
