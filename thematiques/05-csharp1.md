@@ -13,7 +13,7 @@ riche et plus complexe, il s'agit du `C#`.
 
 ### Bases
 
-<a href="/msig24/slides/csharp1/">Slides</a>
+<a href="/msig24/slides/csharp1/index.html">Slides</a>
 
 - [Gestion mémoire](../supports/variables1.md)
 - [Entrées / Sorties / Aléatoire](../supports/input-output-random.md)
