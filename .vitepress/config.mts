@@ -7,7 +7,7 @@ import {withMermaid} from "vitepress-plugin-mermaid";
 import taskLists from 'markdown-it-task-lists'
 import {full as emoji} from 'markdown-it-emoji'
 
-process.env.VITE_EXTRA_EXTENSIONS = 'docx,zip'
+process.env.VITE_EXTRA_EXTENSIONS = 'docx,zip,pptx'
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
@@ -17,7 +17,7 @@ export default withMermaid({
     head: [
         ['link', {rel: "icon", href: "logo.svg"}],
     ],
-    srcExclude: ['slides/**'],
+    srcExclude: ['slides/images/**','slides/*.md'],
 
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
