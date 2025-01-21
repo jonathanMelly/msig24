@@ -12,8 +12,9 @@ Le tout dans une sauce fonctionnelle ;-)
 - [Des listes...](../supports/csharp-list.md)
 - [Orienté objet](../supports/csharp-oo.md)
 
-
-- [Slides WinForms](https://jonathanmelly.github.io/msig24/csharp2-forms/html0/)
+### Slides
+- [Slides Listes](https://jonathanmelly.github.io/msig24/slides/csharp2-list/)
+- [Slides WinForms](https://jonathanmelly.github.io/msig24/slides/csharp2-forms/)
 
 ## Pratique
 - [ ] [Mangaka](../activites/mangaka/README.md)
