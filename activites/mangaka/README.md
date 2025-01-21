@@ -165,3 +165,14 @@ class Program
 ```
 
 </details>
+
+## Bonus
+Faire une recherche tolérante au bruit en utilisant la `distance de Levenshtein` :
+
+```csharp
+int distance = System.Text.Levenshtein.Distance("chien", "chine");
+if(distance<0.5 /*valeur à définir*/)
+{
+   //Match
+}
+```

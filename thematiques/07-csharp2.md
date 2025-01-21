@@ -9,6 +9,7 @@ Retour aux sources avec plein de nouveautés concernant le C#:
 Le tout dans une sauce fonctionnelle ;-)
 
 ## Théorie
+- [Fonctions](../supports/csharp-fonctions.md)
 - [Des listes...](../supports/csharp-list.md)
 - [Orienté objet](../supports/csharp-oo.md)
 
@@ -17,6 +18,7 @@ Le tout dans une sauce fonctionnelle ;-)
 - [Slides WinForms](https://jonathanmelly.github.io/msig24/slides/csharp2-forms/)
 
 ## Pratique
+- [X] Introduction aux fonction (WriteColor,GetInt,Add,...)
 - [ ] [Mangaka](../activites/mangaka/README.md)
 
 

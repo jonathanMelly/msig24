@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+    <!-- Fond -->
+    <rect width="800" height="500" fill="#f8f9fa"/>
+    
+    <!-- Titre -->
+    <text x="400" y="40" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#2c3e50">Anatomie d'une fonction C#</text>
+
+    <!-- Exemple de fonction -->
+    <rect x="50" y="80" width="700" height="120" fill="#ffffff" stroke="#3498db" stroke-width="2" rx="10"/>
+    <text x="70" y="110" font-family="Consolas" font-size="16" fill="#2c3e50">int Calculate(string operation, int a = 0, int b = 10)</text>
+    <text x="70" y="140" font-family="Consolas" font-size="16" fill="#2c3e50">{</text>
+    <text x="90" y="170" font-family="Consolas" font-size="16" fill="#2c3e50">return (operation == "add") ? a + b : a - b;</text>
+    <text x="70" y="190" font-family="Consolas" font-size="16" fill="#2c3e50">}</text>
+
+    <!-- Annotations -->
+    <!-- Type de retour -->
+    <path d="M 90 90 L 90 60 L 200 60" fill="none" stroke="#e74c3c" stroke-width="2"/>
+    <text x="210" y="65" font-family="Arial" font-size="14" fill="#e74c3c">Type de retour (int)</text>
+
+    <!-- Nom de la fonction -->
+    <path d="M 150 90 L 150 50 L 130 50" fill="none" stroke="#27ae60" stroke-width="2"/>
+    <text x="10" y="55" font-family="Arial" font-size="14" fill="#27ae60">Nom de la fonction</text>
+
+    <!-- Paramètres -->
+    <path d="M 250 120 L 250 250 L 50 250" fill="none" stroke="#8e44ad" stroke-width="2"/>
+    <text x="60" y="265" font-family="Arial" font-size="14" fill="#8e44ad">Paramètres</text>
+
+    <!-- Valeurs par défaut -->
+    <path d="M 400 120 L 400 280 L 50 280" fill="none" stroke="#f39c12" stroke-width="2"/>
+    <text x="60" y="293" font-family="Arial" font-size="14" fill="#f39c12">Valeurs par défaut (optionnels)</text>
+
+    <!-- Exemples d'appels -->
+    <rect x="50" y="320" width="700" height="150" fill="#ffffff" stroke="#95a5a6" stroke-width="2" rx="10"/>
+    <text x="70" y="350" font-family="Consolas" font-size="16" fill="#2c3e50">// Différentes façons d'appeler la fonction :</text>
+    <text x="70" y="380" font-family="Consolas" font-size="16" fill="#2c3e50">Calculate("add", 5, 3);                    // Positionnels</text>
+    <text x="70" y="410" font-family="Consolas" font-size="16" fill="#2c3e50">Calculate(operation: "add", a: 5, b: 3);   // Nommés</text>
+    <text x="70" y="440" font-family="Consolas" font-size="16" fill="#2c3e50">Calculate(b: 3, operation: "add");         // Nommés + défaut</text>
+</svg>
