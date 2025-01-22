@@ -167,6 +167,19 @@ class Program
 </details>
 
 ## Bonus
+
+### Recherche
+
+#### Minuscules et `like`
+
+```csharp
+if("Manga".ToLower().Contains("A".ToLower()))
+{
+   Console.Write("manga contient a");
+}
+```
+
+#### Levenshtein
 Faire une recherche tolérante au bruit en utilisant la 
 [distance de Levenshtein](https://fr.wikipedia.org/wiki/Distance_de_Levenshtein) :
 
