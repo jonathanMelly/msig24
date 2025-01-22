@@ -167,12 +167,20 @@ class Program
 </details>
 
 ## Bonus
-Faire une recherche tolérante au bruit en utilisant la `distance de Levenshtein` :
+Faire une recherche tolérante au bruit en utilisant la 
+[distance de Levenshtein](https://fr.wikipedia.org/wiki/Distance_de_Levenshtein) :
+
+> [!WARNING]
+> ⚠ Il faut .NET >= 8.0
+
+```shell
+dotnet add package Fastenshtein
+```
 
 ```csharp
-int distance = System.Text.Levenshtein.Distance("chien", "chine");
-if(distance<0.5 /*valeur à définir*/)
+int distance = Fastenshtein.Levenshtein.Distance("chien", "chine");
+if(distance<5 /*valeur à définir*/)
 {
-   //Match
+   //Les mots se ressemblent beaucoup (fullmatch => 0), qu’est-ce qu’on fait ?
 }
 ```
