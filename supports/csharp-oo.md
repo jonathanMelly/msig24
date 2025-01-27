@@ -44,14 +44,19 @@ Les attributs sont les données stockées dans une classe. Ils représentent les
 ```csharp
 public class Student
 {
-    // Attributs privés
-    private string firstName;
-    private string lastName;
-    private int age;
-    private double grade;
-    private bool isEnrolled;
+    
+    public string firstName;
+    public string lastName;
+    public int age;
+    public double grade;
+    public bool isEnrolled;
 }
 ```
+
+> [!TIP]
+> Idéalement les attributs sont notés `private` par défaut
+> mais pour des raisons de simplification c’est la visibilité `public`
+> qui est utilisée.
 
 ## 3. L'encapsulation et les propriétés
 
