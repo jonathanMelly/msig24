@@ -75,8 +75,16 @@ public class Student
     
     public string FirstName
     {
-        get { return firstName; }
-        set { firstName = value; }
+        get 
+        { 
+            //if ...
+            return firstName; 
+        }
+        set 
+        { 
+            //if ...
+            firstName = value; 
+        }
     }
 
     // Version courte (propriété auto-implémentée)
@@ -97,7 +105,7 @@ Les méthodes sont des fonctions qui définissent le comportement des objets.
 ```csharp
 public class Student
 {
-    private double[] grades;
+    private List<double> grades = new();
 
     // Méthode sans retour avec paramètre
     public void AddGrade(double grade)
@@ -113,7 +121,7 @@ public class Student
         {
             sum += grade;
         }
-        return sum / grades.Length;
+        return sum / grades.Count;
     }
 }
 ```
@@ -126,8 +134,8 @@ Les constructeurs sont des méthodes spéciales qui initialisent les objets lors
 ```csharp
 public class Student
 {
-    private string firstName;
-    private string lastName;
+    public string firstName;
+    public string lastName;
 
     // Constructeur par défaut
     public Student()
@@ -198,7 +206,7 @@ Le polymorphisme avec les listes permet de stocker des objets de différents typ
 public class School
 {
     // Liste polymorphique qui peut contenir des Person et tous ses dérivés
-    private List<Person> people = new List<Person>();
+    private List<Person> people = new();
 
     public void AddPerson(Person person)
     {
