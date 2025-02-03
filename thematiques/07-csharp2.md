@@ -17,6 +17,9 @@ Le tout dans une sauce fonctionnelle ;-)
 - [Slides Listes](https://jonathanmelly.github.io/msig24/slides/csharp2-list/)
 - [Slides WinForms](https://jonathanmelly.github.io/msig24/slides/csharp2-forms/)
 
+### Vidéos
+- [POO en 5 minutes](https://eduvaud-my.sharepoint.com/:v:/g/personal/jonathan_melly_eduvaud_ch/EWRWv4vWbtBDtyEkvEaWIIcBDbeialPf9OiWiOA86vsJZQ?e=CUvam7)
+
 ## Pratique
 - [X] Introduction aux fonction (WriteColor,GetInt,Add,...)
 - [ ] [Mangaka](../activites/mangaka/README.md)
