@@ -22,11 +22,11 @@ Le tout dans une sauce fonctionnelle ;-)
 
 ## Pratique
 - [X] Introduction aux fonction (WriteColor,GetInt,Add,...)
-- [ ] [Mangaka](../activites/mangaka/README.md)
+- [X] [Mangaka](../activites/mangaka/README.md)
 
 
-- [ ] [Bibliothèque](../activites/mangaka/biblio.md)
-- [ ] [EscargOO 🐌](../activites/snail/README.md)
+- [X] [Bibliothèque](../activites/mangaka/biblio.md)
+- [X] [EscargOO 🐌](../activites/snail/README.md)
 
 
 - [ ] [WinForms : HelloWorld](https://learn.microsoft.com/fr-ch/visualstudio/ide/create-csharp-winform-visual-studio?toc=%2Fvisualstudio%2Fget-started%2Fcsharp%2Ftoc.json&bc=%2Fvisualstudio%2Fget-started%2Fcsharp%2Fbreadcrumb%2Ftoc.json&view=vs-2022&WT.mc_id=email&sharingId=B032694AB452ABFB)
