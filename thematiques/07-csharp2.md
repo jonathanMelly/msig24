@@ -16,6 +16,7 @@ Le tout dans une sauce fonctionnelle ;-)
 ### Slides
 - [Slides Listes](https://jonathanmelly.github.io/msig24/slides/csharp2-list/)
 - [Slides WinForms](https://jonathanmelly.github.io/msig24/slides/csharp2-forms/)
+- [Static](assets/staticus.pptx) ([code de base Destiny](assets/Destiny.zip))
 
 ### Vidéos
 - [POO en 5 minutes](https://eduvaud-my.sharepoint.com/:v:/g/personal/jonathan_melly_eduvaud_ch/EWRWv4vWbtBDtyEkvEaWIIcBDbeialPf9OiWiOA86vsJZQ?e=CUvam7)
