@@ -5,7 +5,7 @@
 
 Réaliser une app pour afficher des points de température :
 
-![temp1.PNG](temp1.PNG)
+![temp1.PNG](temp1.png)
 
 ## Aide
 
@@ -56,6 +56,6 @@ path.AddLine(
 g.DrawPath(new Pen(Brushes.Brown), path);
 ```
 
-![graph-line.PNG](graph-line.PNG)
+![graph-line.PNG](graph-line.png)
 
 - Utiliser une librairie comme [Scottplot](https://scottplot.net/)
