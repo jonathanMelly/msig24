@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <!-- Définition du fond blanc -->
+  <rect width="500" height="450" fill="white"/>
+  <!-- Styles globaux -->
+  <style>
+    .box {
+      stroke: #333;
+      stroke-width: 2;
+      rx: 10;
+      ry: 10;
+    }
+    .client-box {
+      fill: #E1F5FE;
+    }
+    .server-box {
+      fill: #E8F5E9;
+    }
+    .browser-box {
+      fill: #FFF9C4;
+    }
+    .arrow {
+      stroke: #333;
+      stroke-width: 2;
+      marker-end: url(#arrowhead);
+    }
+    .label {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-anchor: middle;
+    }
+    .title {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+    .subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-style: italic;
+      text-anchor: middle;
+    }
+    .component {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      text-anchor: middle;
+    }
+    .tech-label {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+  </style>
+
+  <!-- Définition de la flèche -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Titres -->
+  <text x="250" y="40" class="title">PHP côté serveur</text>
+  <text x="250" y="60" class="subtitle">(rechargement de page)</text>
+  
+  <!-- Navigateur -->
+  <rect x="50" y="80" width="180" height="300" class="box browser-box" />
+  <text x="140" y="100" class="component">NAVIGATEUR</text>
+  
+  <!-- HTML/CSS généré -->
+  <rect x="80" y="130" width="120" height="80" class="box client-box" />
+  <text x="140" y="155" class="component">HTML / CSS</text>
+  <text x="140" y="175" class="component">Généré</text>
+  
+  <!-- Utilisateur -->
+  <ellipse cx="140" cy="260" rx="20" ry="20" fill="#FFF" stroke="#333" stroke-width="2" />
+  <text x="140" y="265" class="component">👤</text>
+  
+  <!-- Serveur -->
+  <rect x="300" y="80" width="180" height="300" class="box server-box" />
+  <text x="390" y="100" class="component">SERVEUR</text>
+  
+  <!-- PHP -->
+  <rect x="330" y="130" width="120" height="80" class="box server-box" />
+  <text x="390" y="155" class="component">PHP</text>
+  <text x="390" y="175" class="component">Génère HTML</text>
+  
+  <!-- Base de données -->
+  <rect x="330" y="240" width="120" height="80" class="box server-box" />
+  <text x="390" y="265" class="component">Base de</text>
+  <text x="390" y="285" class="component">données</text>
+  
+  <!-- Flèches internes -->
+  <path d="M390 210 L390 240" class="arrow" />
+  
+  <!-- Flèches client-serveur -->
+  <path d="M200 145 L330 145" class="arrow" />
+  <text x="265" y="130" class="label">Requête HTTP</text>
+  
+  <path d="M330 175 L200 175" class="arrow" />
+  <text x="265" y="195" class="label">Réponse HTML</text>
+  
+  <!-- Flèche utilisateur -->
+  <path d="M140 210 L140 240" class="arrow" transform="scale(1, -1) translate(0, -500)" />
+  <text x="170" y="225" class="label" style="text-anchor: start">Action</text>
+  <text x="165" y="300" class="label">Rechargement</text>
+  <text x="165" y="315" class="label">de page</text>
+</svg>

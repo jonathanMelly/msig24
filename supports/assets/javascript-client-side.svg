@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Définition du fond blanc -->
+  <rect width="500" height="450" fill="white"/>
+  <!-- Styles globaux -->
+  <style>
+    .box {
+      stroke: #333;
+      stroke-width: 2;
+      rx: 10;
+      ry: 10;
+    }
+    .client-box {
+      fill: #E1F5FE;
+    }
+    .browser-box {
+      fill: #FFF9C4;
+    }
+    .arrow {
+      stroke: #333;
+      stroke-width: 2;
+      marker-end: url(#arrowhead);
+    }
+    .label {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-anchor: middle;
+    }
+    .title {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+    .subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-style: italic;
+      text-anchor: middle;
+    }
+    .component {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      text-anchor: middle;
+    }
+    .tech-label {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+  </style>
+
+  <!-- Définition de la flèche -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Titres -->
+  <text x="200" y="40" class="title">JavaScript côté client</text>
+  <text x="200" y="60" class="subtitle">(pas d'interactions serveur)</text>
+  
+  <!-- Navigateur -->
+  <rect x="50" y="80" width="300" height="300" class="box browser-box" />
+  <text x="200" y="100" class="component">NAVIGATEUR</text>
+  
+  <!-- HTML/CSS -->
+  <rect x="80" y="120" width="240" height="80" class="box client-box" />
+  <text x="200" y="145" class="component">HTML / CSS</text>
+  <text x="200" y="165" class="component">Structure et style</text>
+  
+  <!-- JavaScript -->
+  <rect x="80" y="220" width="240" height="80" class="box client-box" />
+  <text x="200" y="245" class="component">JavaScript</text>
+  <text x="200" y="265" class="component">Interactivité côté client</text>
+  
+  <!-- Flèche HTML→JS -->
+  <path d="M200 200 L200 220" class="arrow" />
+  <text x="220" y="210" class="label" style="text-anchor: start">Manipule le DOM</text>
+  
+  <!-- Utilisateur -->
+  <ellipse cx="200" cy="330" rx="20" ry="20" fill="#FFF" stroke="#333" stroke-width="2" />
+  <text x="200" y="335" class="component">👤</text>
+  
+  <!-- Flèches utilisateur -->
+  <path d="M200 310 L200 330" class="arrow" transform="scale(1, -1) translate(0, -660)" />
+  <text x="230" y="315" class="label" style="text-anchor: start">Interaction</text>
+</svg>

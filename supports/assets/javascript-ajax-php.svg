@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" width="500" height="450">
+  <!-- Définition du fond blanc -->
+  <rect width="500" height="450" fill="white"/>
+
+  <!-- Styles globaux -->
+  <style>
+    .box {
+    stroke: #333;
+    stroke-width: 2;
+    rx: 10;
+    ry: 10;
+    }
+    .client-box {
+    fill: #E1F5FE;
+    }
+    .server-box {
+    fill: #E8F5E9;
+    }
+    .browser-box {
+    fill: #FFF9C4;
+    }
+    .arrow {
+    stroke: #333;
+    stroke-width: 2;
+    marker-end: url(#arrowhead);
+    fill: none;
+    }
+    .label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-anchor: middle;
+    }
+    .title {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-anchor: middle;
+    }
+    .subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    text-anchor: middle;
+    }
+    .component {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-anchor: middle;
+    }
+    .tech-label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+    }
+  </style>
+
+  <!-- Définition de la flèche -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Titres -->
+  <text x="250" y="40" class="title">JavaScript avec AJAX vers PHP</text>
+  <text x="250" y="60" class="subtitle">(pas de rechargement de page)</text>
+
+  <!-- Navigateur -->
+  <rect x="50" y="80" width="180" height="350" class="box browser-box" />
+  <text x="140" y="100" class="component">NAVIGATEUR</text>
+
+  <!-- HTML/CSS -->
+  <rect x="80" y="120" width="120" height="60" class="box client-box" />
+  <text x="140" y="145" class="component">HTML / CSS</text>
+  <text x="140" y="165" class="component">Interface</text>
+
+  <!-- JavaScript + AJAX - Plus éloigné du HTML -->
+  <rect x="80" y="240" width="120" height="60" class="box client-box" />
+  <text x="140" y="265" class="component">JavaScript</text>
+  <text x="140" y="285" class="component">+ AJAX</text>
+
+  <!-- Utilisateur -->
+  <ellipse cx="140" cy="350" rx="20" ry="20" fill="#FFF" stroke="#333" stroke-width="2" />
+  <text x="140" y="355" class="component">👤</text>
+
+  <!-- Serveur -->
+  <rect x="300" y="80" width="180" height="350" class="box server-box" />
+  <text x="390" y="100" class="component">SERVEUR</text>
+
+  <!-- PHP API -->
+  <rect x="330" y="180" width="120" height="60" class="box server-box" />
+  <text x="390" y="205" class="component">PHP API</text>
+  <text x="390" y="225" class="component">JSON/XML</text>
+
+  <!-- Base de données -->
+  <rect x="330" y="280" width="120" height="60" class="box server-box" />
+  <text x="390" y="305" class="component">Base de</text>
+  <text x="390" y="325" class="component">données</text>
+
+  <!-- Flèches AJAX -->
+  <path d="M200 255 L330 210" class="arrow" />
+  <text x="250" y="220" class="label">Requête AJAX</text>
+
+  <path d="M330 225 L200 275" class="arrow" />
+  <text x="250" y="265" class="label">Données JSON</text>
+
+  <!-- Flèches internes serveur -->
+  <path d="M390 240 L390 280" class="arrow" />
+
+  <!-- Flèche utilisateur vers JavaScript -->
+  <path d="M140 350 L140 300" class="arrow" />
+  <text x="170" y="330" class="label" style="text-anchor: start">Action</text>
+
+  <!-- Flèche améliorée mise à jour DOM - Courbe qui remonte clairement -->
+  <path d="M120 240 C80 200, 80 180, 120 180" class="arrow" />
+  <text x="60" y="210" class="label" style="text-anchor: start">Mise à jour DOM</text>
+
+  <text x="140" y="400" class="label">Sans rechargement de page</text>
+</svg>
