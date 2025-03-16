@@ -191,7 +191,7 @@ class: interactive-demo
 
 # Démo interactive
 
-[Voir la démo](/msig24/supports/javascript-event-demo.html)
+[Voir la démo](https://jonathanmelly.github.io/msig24/supports/javascript-event-demo.html)
 
 ---
 
