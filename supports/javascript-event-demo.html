@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo interactive - Événements JavaScript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            margin-top: 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .demo-area {
+            display: flex;
+            margin: 20px 0;
+            gap: 20px;
+        }
+        
+        .interactive-zone {
+            flex: 1;
+            height: 300px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+        
+        .log-panel {
+            flex: 1;
+            height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow-y: auto;
+            background-color: #f8f8f8;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .target-element {
+            width: 100px;
+            height: 100px;
+            background-color: #4f46e5;
+            border-radius: 8px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            cursor: pointer;
+            user-select: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .target-element:focus {
+            outline: 3px solid #818cf8;
+        }
+        
+        .target-element.active {
+            background-color: #4338ca;
+        }
+        
+        .log-entry {
+            margin-bottom: 4px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: opacity 1s;
+        }
+        
+        .log-entry.mouse {
+            background-color: #e6f7ff;
+            border-left: 3px solid #1890ff;
+        }
+        
+        .log-entry.keyboard {
+            background-color: #f6ffed;
+            border-left: 3px solid #52c41a;
+        }
+        
+        .log-entry.touch {
+            background-color: #fff7e6;
+            border-left: 3px solid #fa8c16;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        button:hover {
+            background-color: #4338ca;
+        }
+        
+        .help-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 15px;
+        }
+        
+        .key-info {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .info-box {
+            flex: 1;
+        }
+        
+        .info-box h3 {
+            margin-top: 0;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .info-value {
+            font-family: monospace;
+            background-color: white;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Démo interactive d'événements JavaScript</h1>
+        
+        <div class="controls">
+            <button id="clear-log">Effacer le journal</button>
+            <button id="reset-position">Réinitialiser la position</button>
+        </div>
+        
+        <div class="demo-area">
+            <div class="interactive-zone" id="interactive-zone">
+                <div class="target-element" id="target-element" tabindex="0">
+                    Interagir
+                </div>
+            </div>
+            
+            <div class="log-panel" id="log-panel">
+                <div class="log-entry">Journal d'événements</div>
+            </div>
+        </div>
+        
+        <div class="key-info">
+            <div class="info-box">
+                <h3>Position de la souris</h3>
+                <div class="info-value" id="mouse-position">x: 0, y: 0</div>
+            </div>
+            
+            <div class="info-box">
+                <h3>Dernière touche</h3>
+                <div class="info-value" id="last-key">-</div>
+            </div>
+        </div>
+        
+        <div class="help-text">
+            <p><strong>Instructions:</strong></p>
+            <ul>
+                <li>Cliquez et faites glisser l'élément bleu pour le déplacer.</li>
+                <li>Cliquez sur l'élément pour le sélectionner.</li>
+                <li>Appuyez sur des touches du clavier lorsque l'élément est sélectionné.</li>
+                <li>Toutes les interactions seront enregistrées dans le journal à droite.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Éléments DOM
+            const target = document.getElementById('target-element');
+            const zone = document.getElementById('interactive-zone');
+            const logPanel = document.getElementById('log-panel');
+            const clearLogBtn = document.getElementById('clear-log');
+            const resetPositionBtn = document.getElementById('reset-position');
+            const mousePositionDisplay = document.getElementById('mouse-position');
+            const lastKeyDisplay = document.getElementById('last-key');
+            
+            // Variables pour le drag & drop
+            let isDragging = false;
+            let offsetX, offsetY;
+            
+            // Fonction pour ajouter une entrée dans le journal
+            function addLogEntry(eventType, details, category) {
+                const entry = document.createElement('div');
+                entry.classList.add('log-entry', category);
+                
+                const timestamp = new Date().toLocaleTimeString('fr-FR', { 
+                    hour: '2-digit', 
+                    minute: '2-digit', 
+                    second: '2-digit',
+                    fractionalSecondDigits: 3
+                });
+                
+                entry.innerHTML = `<span style="color: #999">${timestamp}</span> | <strong>${eventType}</strong>: ${details}`;
+                
+                logPanel.insertBefore(entry, logPanel.firstChild);
+                
+                // Limiter le nombre d'entrées pour éviter les problèmes de performance
+                if (logPanel.children.length > 50) {
+                    logPanel.removeChild(logPanel.lastChild);
+                }
+            }
+            
+            // Événements de souris
+            target.addEventListener('mousedown', function(e) {
+                // Empêcher la sélection de texte pendant le glisser
+                e.preventDefault();
+                
+                target.classList.add('active');
+                isDragging = true;
+                
+                // Calculer le décalage pour que le drag soit relatif au point de clic
+                const rect = target.getBoundingClientRect();
+                offsetX = e.clientX - rect.left;
+                offsetY = e.clientY - rect.top;
+                
+                addLogEntry('mousedown', `Bouton: ${e.button}`, 'mouse');
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                // Mise à jour de l'affichage de la position
+                mousePositionDisplay.textContent = `x: ${e.clientX}, y: ${e.clientY}`;
+                
+                if (isDragging) {
+                    // Calculer la nouvelle position
+                    const zoneRect = zone.getBoundingClientRect();
+                    let newX = e.clientX - zoneRect.left - offsetX;
+                    let newY = e.clientY - zoneRect.top - offsetY;
+                    
+                    // Limiter la position à l'intérieur de la zone
+                    const maxX = zoneRect.width - target.offsetWidth;
+                    const maxY = zoneRect.height - target.offsetHeight;
+                    
+                    newX = Math.max(0, Math.min(newX, maxX));
+                    newY = Math.max(0, Math.min(newY, maxY));
+                    
+                    // Appliquer la nouvelle position
+                    target.style.left = `${newX}px`;
+                    target.style.top = `${newY}px`;
+                    
+                    // Limiter les logs de mousemove pour éviter les surcharges
+                    if (Math.random() < 0.1) { // Enregistrer environ 10% des événements
+                        addLogEntry('mousemove', `x: ${Math.round(newX)}, y: ${Math.round(newY)}`, 'mouse');
+                    }
+                }
+            });
+            
+            document.addEventListener('mouseup', function() {
+                if (isDragging) {
+                    target.classList.remove('active');
+                    isDragging = false;
+                    addLogEntry('mouseup', '', 'mouse');
+                }
+            });
+            
+            target.addEventListener('click', function(e) {
+                addLogEntry('click', `x: ${e.clientX}, y: ${e.clientY}`, 'mouse');
+                // Mettre le focus sur l'élément pour les événements clavier
+                target.focus();
+            });
+            
+            target.addEventListener('dblclick', function() {
+                addLogEntry('dblclick', '', 'mouse');
+            });
+            
+            // Événements clavier
+            target.addEventListener('keydown', function(e) {
+                addLogEntry('keydown', `key: ${e.key}, code: ${e.code}`, 'keyboard');
+                lastKeyDisplay.textContent = e.key;
+                
+                // Changer la couleur pour les touches flèches
+                if (e.key.startsWith('Arrow')) {
+                    // Empêcher le défilement de la page avec les flèches
+                    e.preventDefault();
+                    
+                    // Obtenir la position actuelle
+                    const rect = target.getBoundingClientRect();
+                    const zoneRect = zone.getBoundingClientRect();
+                    
+                    let newX = rect.left - zoneRect.left;
+                    let newY = rect.top - zoneRect.top;
+                    
+                    // Ajuster la position en fonction de la touche
+                    const step = e.shiftKey ? 10 : 5; // Déplacement plus grand avec Shift
+                    
+                    switch (e.key) {
+                        case 'ArrowLeft':
+                            newX = Math.max(0, newX - step);
+                            break;
+                        case 'ArrowRight':
+                            newX = Math.min(zoneRect.width - rect.width, newX + step);
+                            break;
+                        case 'ArrowUp':
+                            newY = Math.max(0, newY - step);
+                            break;
+                        case 'ArrowDown':
+                            newY = Math.min(zoneRect.height - rect.height, newY + step);
+                            break;
+                    }
+                    
+                    // Appliquer la nouvelle position
+                    target.style.left = `${newX}px`;
+                    target.style.top = `${newY}px`;
+                }
+            });
+            
+            target.addEventListener('keyup', function(e) {
+                addLogEntry('keyup', `key: ${e.key}, code: ${e.code}`, 'keyboard');
+            });
+            
+            // Événements tactiles pour les appareils mobiles
+            target.addEventListener('touchstart', function(e) {
+                // Empêcher le scroll sur mobile
+                e.preventDefault();
+                
+                target.classList.add('active');
+                
+                const touch = e.touches[0];
+                const rect = target.getBoundingClientRect();
+                
+                offsetX = touch.clientX - rect.left;
+                offsetY = touch.clientY - rect.top;
+                
+                addLogEntry('touchstart', `touches: ${e.touches.length}`, 'touch');
+            });
+            
+            target.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+                
+                const touch = e.touches[0];
+                const zoneRect = zone.getBoundingClientRect();
+                
+                let newX = touch.clientX - zoneRect.left - offsetX;
+                let newY = touch.clientY - zoneRect.top - offsetY;
+                
+                // Limiter la position
+                const maxX = zoneRect.width - target.offsetWidth;
+                const maxY = zoneRect.height - target.offsetHeight;
+                
+                newX = Math.max(0, Math.min(newX, maxX));
+                newY = Math.max(0, Math.min(newY, maxY));
+                
+                target.style.left = `${newX}px`;
+                target.style.top = `${newY}px`;
+                
+                // Mettre à jour l'affichage de position
+                mousePositionDisplay.textContent = `x: ${Math.round(touch.clientX)}, y: ${Math.round(touch.clientY)}`;
+                
+                if (Math.random() < 0.1) {
+                    addLogEntry('touchmove', `x: ${Math.round(newX)}, y: ${Math.round(newY)}`, 'touch');
+                }
+            });
+            
+            target.addEventListener('touchend', function() {
+                target.classList.remove('active');
+                addLogEntry('touchend', '', 'touch');
+            });
+            
+            // Événements focus/blur
+            target.addEventListener('focus', function() {
+                addLogEntry('focus', '', 'mouse');
+            });
+            
+            target.addEventListener('blur', function() {
+                addLogEntry('blur', '', 'mouse');
+            });
+            
+            // Boutons de contrôle
+            clearLogBtn.addEventListener('click', function() {
+                // Effacer le journal tout en gardant l'en-tête
+                while (logPanel.children.length > 1) {
+                    logPanel.removeChild(logPanel.lastChild);
+                }
+                addLogEntry('clear', 'Journal effacé', 'mouse');
+            });
+            
+            resetPositionBtn.addEventListener('click', function() {
+                // Réinitialiser la position de l'élément
+                target.style.left = '100px';
+                target.style.top = '100px';
+                addLogEntry('reset', 'Position réinitialisée', 'mouse');
+            });
+            
+            // Message initial
+            addLogEntry('init', 'Démo chargée et prête', 'mouse');
+        });
+    </script>
+</body>
+</html>

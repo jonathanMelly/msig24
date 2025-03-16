@@ -1,0 +1,21 @@
+nom,prenom,email,telephone,ville,montant_achats,date_dernier_achat
+Picasso,Pablo,pablo.picasso@email.com,+41791234567,Zurich,15800,2023-11-23
+Van Gogh,Vincent,vincent.vangogh@email.com,+41762345678,Genève,7200,2024-01-15
+Kahlo,Frida,frida.kahlo@email.com,+41793456789,Lausanne,9750,2023-09-05
+Dali,Salvador,salvador.dali@email.com,+41764567890,Bâle,12300,2024-02-28
+O'Keeffe,Georgia,georgia.okeeffe@email.com,+41795678901,Berne,6800,2023-12-10
+Warhol,Andy,andy.warhol@email.com,+41766789012,Zurich,22500,2024-03-01
+Monet,Claude,claude.monet@email.com,+41797890123,Lugano,18400,2023-10-12
+Basquiat,Jean-Michel,jm.basquiat@email.com,+41768901234,Genève,31200,2024-01-30
+Kusama,Yayoi,yayoi.kusama@email.com,+41799012345,Lucerne,14700,2023-11-05
+Banksy,Anonymous,banksy@email.com,+41760123456,Lausanne,27500,2024-02-15
+Klimt,Gustav,gustav.klimt@email.com,+41791234987,Montreux,16900,2023-08-20
+Pollock,Jackson,jackson.pollock@email.com,+41762349876,Zurich,24600,2023-12-18
+Kandinsky,Wassily,wassily.kandinsky@email.com,+41793459876,Bâle,11300,2024-01-08
+Matisse,Henri,henri.matisse@email.com,+41764563219,Genève,19500,2023-10-25
+Rothko,Mark,mark.rothko@email.com,+41795674321,Berne,28700,2024-03-05
+Hockney,David,david.hockney@email.com,+41766543210,Zurich,13600,2023-09-14
+Munch,Edvard,edvard.munch@email.com,+41797654321,Lausanne,8900,2024-02-01
+Chagall,Marc,marc.chagall@email.com,+41768765432,Genève,15300,2023-11-28
+Miró,Joan,joan.miro@email.com,+41799876543,Bâle,21400,2024-01-20
+Mondrian,Piet,piet.mondrian@email.com,+41760987654,Zurich,17200,2023-12-05
