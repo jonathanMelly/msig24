@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriel Pong - Grid, Flex et Événements</title>
+    <style>
+        /* Styles de base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Layout principal utilisant Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas: 
+                "header"
+                "main"
+                "footer";
+            height: 100vh;
+        }
+
+        header {
+            grid-area: header;
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+
+        main {
+            grid-area: main;
+            padding: 1rem;
+            /* Centrage du contenu avec Flexbox */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Flex pour les contrôles */
+        .controls {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        /* Style pour le terrain de jeu */
+        #game-board {
+            width: 600px;
+            height: 400px;
+            background-color: #000;
+            position: relative;
+            border: 2px solid #333;
+        }
+
+        /* Styles pour les éléments du jeu */
+        .paddle {
+            width: 10px;
+            height: 80px;
+            background-color: white;
+            position: absolute;
+        }
+
+        #paddle-left {
+            left: 10px;
+            top: 160px;
+        }
+
+        #paddle-right {
+            right: 10px;
+            top: 160px;
+        }
+
+        #ball {
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 192px;
+            left: 292px;
+        }
+
+        #score-board {
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            padding: 10px 0;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Grille pour les règles du jeu */
+        .rules {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .rules div {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .explanation {
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .explanation h2 {
+            color: #333;
+        }
+
+        .explanation code {
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        /* Media queries pour la responsivité */
+        @media (max-width: 650px) {
+            #game-board, #score-board {
+                width: 100%;
+            }
+            
+            .rules {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tutoriel Pong avec Grid, Flex et Événements JavaScript</h1>
+        </header>
+        
+        <main>
+            <div id="score-board">
+                <div id="score-left">0</div>
+                <div id="score-right">0</div>
+            </div>
+            
+            <div id="game-board">
+                <div id="paddle-left" class="paddle"></div>
+                <div id="ball"></div>
+                <div id="paddle-right" class="paddle"></div>
+            </div>
+            
+            <div class="controls">
+                <button id="start-btn">Démarrer</button>
+                <button id="reset-btn">Réinitialiser</button>
+            </div>
+
+            <div class="rules">
+                <div>
+                    <h3>Contrôles Joueur 1</h3>
+                    <p>Utilisez les touches <strong>W</strong> (haut) et <strong>S</strong> (bas) pour déplacer la raquette gauche.</p>
+                </div>
+                <div>
+                    <h3>Contrôles Joueur 2</h3>
+                    <p>Utilisez les touches <strong>Flèche Haut</strong> et <strong>Flèche Bas</strong> pour déplacer la raquette droite.</p>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h2>Explication du Code</h2>
+                
+                <h3>1. Layout avec CSS Grid</h3>
+                <p>La page utilise CSS Grid pour organiser la structure principale en trois sections: header, main et footer.</p>
+                <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    height: 100vh;
+}</code></pre>
+                
+                <h3>2. Positionnement avec Flexbox</h3>
+                <p>Flexbox est utilisé pour centrer les éléments dans la section principale et organiser les contrôles.</p>
+                <pre><code>main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}</code></pre>
+                
+                <h3>3. Événements JavaScript</h3>
+                <p>Le jeu utilise plusieurs types d'événements:</p>
+                <ul>
+                    <li><code>keydown</code> et <code>keyup</code> pour détecter les touches du clavier</li>
+                    <li><code>click</code> pour les boutons</li>
+                    <li><code>requestAnimationFrame</code> pour l'animation fluide</li>
+                </ul>
+                
+                <h3>Pour l'apprenti: Fonctionnalités à compléter</h3>
+                <ol>
+                    <li>Implémenter le système avancé de collision décrit en pseudo-code</li>
+                    <li>Ajouter des effets visuels lors des rebonds</li>
+                    <li>Créer une accélération progressive de la balle</li>
+                    <li>Ajouter des effets sonores pour les collisions</li>
+                    <li>Implémenter un menu de pause et des niveaux de difficulté</li>
+                </ol>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Tutoriel créé pour apprendre Grid, Flex et les événements JavaScript</p>
+        </footer>
+    </div>
+
+    <script>
+        // Éléments du DOM
+        const gameBoard = document.getElementById('game-board');
+        const ball = document.getElementById('ball');
+        const paddleLeft = document.getElementById('paddle-left');
+        const paddleRight = document.getElementById('paddle-right');
+        const scoreLeft = document.getElementById('score-left');
+        const scoreRight = document.getElementById('score-right');
+        const startBtn = document.getElementById('start-btn');
+        const resetBtn = document.getElementById('reset-btn');
+
+        // Variables du jeu
+        let gameRunning = false;
+        let ballX = 292;
+        let ballY = 192;
+        let ballSpeedX = 5;
+        let ballSpeedY = 3;
+        let paddleLeftY = 160;
+        let paddleRightY = 160;
+        let leftScore = 0;
+        let rightScore = 0;
+        const paddleSpeed = 10;
+
+        // État des touches
+        const keys = {
+            w: false,
+            s: false,
+            arrowUp: false,
+            arrowDown: false
+        };
+
+        // Fonction pour réinitialiser la balle
+        function resetBall() {
+            ballX = 292;
+            ballY = 192;
+            // Direction aléatoire au démarrage
+            ballSpeedX = Math.random() > 0.5 ? 5 : -5;
+            ballSpeedY = Math.random() > 0.5 ? 3 : -3;
+        }
+
+        // Fonction pour réinitialiser le jeu
+        function resetGame() {
+            gameRunning = false;
+            resetBall();
+            paddleLeftY = 160;
+            paddleRightY = 160;
+            leftScore = 0;
+            rightScore = 0;
+            scoreLeft.textContent = leftScore;
+            scoreRight.textContent = rightScore;
+            updatePositions();
+        }
+
+        // Fonction pour mettre à jour les positions des éléments
+        function updatePositions() {
+            ball.style.left = ballX + 'px';
+            ball.style.top = ballY + 'px';
+            paddleLeft.style.top = paddleLeftY + 'px';
+            paddleRight.style.top = paddleRightY + 'px';
+        }
+
+        // Gestionnaire d'événement pour les touches
+        function handleKeyDown(e) {
+            switch(e.key.toLowerCase()) {
+                case 'w':
+                    keys.w = true;
+                    break;
+                case 's':
+                    keys.s = true;
+                    break;
+                case 'arrowup':
+                    keys.arrowUp = true;
+                    break;
+                case 'arrowdown':
+                    keys.arrowDown = true;
+                    break;
+            }
+        }
+
+        function handleKeyUp(e) {
+            switch(e.key.toLowerCase()) {
+                case 'w':
+                    keys.w = false;
+                    break;
+                case 's':
+                    keys.s = false;
+                    break;
+                case 'arrowup':
+                    keys.arrowUp = false;
+                    break;
+                case 'arrowdown':
+                    keys.arrowDown = false;
+                    break;
+            }
+        }
+
+        // Fonction pour déplacer les raquettes
+        function movePaddles() {
+            // Raquette gauche
+            if (keys.w && paddleLeftY > 0) {
+                paddleLeftY -= paddleSpeed;
+            }
+            if (keys.s && paddleLeftY < gameBoard.clientHeight - paddleLeft.clientHeight) {
+                paddleLeftY += paddleSpeed;
+            }
+
+            // Raquette droite
+            if (keys.arrowUp && paddleRightY > 0) {
+                paddleRightY -= paddleSpeed;
+            }
+            if (keys.arrowDown && paddleRightY < gameBoard.clientHeight - paddleRight.clientHeight) {
+                paddleRightY += paddleSpeed;
+            }
+        }
+
+        // Fonction pour mettre à jour la position de la balle
+        function updateBall() {
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
+
+            // Collision avec les bords haut et bas
+            if (ballY <= 0 || ballY >= gameBoard.clientHeight - ball.clientHeight) {
+                ballSpeedY = -ballSpeedY;
+            }
+
+            /*
+            PSEUDO-CODE: Système de collision avancé à implémenter par l'apprenti
+            -----------------------------------------------------------------------
+            
+            1. Détection de collision avec la raquette:
+               - Calculer la distance entre le centre de la balle et la raquette
+               - Vérifier si cette distance est inférieure à la somme des rayons/dimensions
+            
+            2. Calcul de l'angle de rebond:
+               - Déterminer le point d'impact sur la raquette (haut, milieu, bas)
+               - Diviser la raquette en 5 sections:
+                 * Très haut: angle très vers le haut (-60°)
+                 * Haut: angle vers le haut (-30°)
+                 * Milieu: angle horizontal (0°)
+                 * Bas: angle vers le bas (+30°)
+                 * Très bas: angle très vers le bas (+60°)
+            
+            3. Ajustement de la vitesse:
+               - Augmenter légèrement la vitesse à chaque rebond (coefficient multiplicateur)
+               - Limiter la vitesse maximale pour éviter que le jeu devienne impossible
+               - Prendre en compte la vitesse de déplacement de la raquette au moment de l'impact
+            
+            4. Effets spéciaux:
+               - Ajouter un effet visuel au moment de l'impact (particules, flash, etc.)
+               - Jouer un son de rebond avec variation de pitch selon la vitesse
+            */
+            
+            // Fonction basique de détection de collision avec les raquettes
+            // À REMPLACER PAR LE PSEUDO-CODE CI-DESSUS
+            
+            // Détection simple pour la raquette gauche
+            if (
+                ballX <= paddleLeft.clientWidth + 10 &&
+                ballY + ball.clientHeight >= paddleLeftY &&
+                ballY <= paddleLeftY + paddleLeft.clientHeight
+            ) {
+                ballSpeedX = -ballSpeedX;
+            }
+
+            // Détection simple pour la raquette droite
+            if (
+                ballX >= gameBoard.clientWidth - paddleRight.clientWidth - ball.clientWidth - 10 &&
+                ballY + ball.clientHeight >= paddleRightY &&
+                ballY <= paddleRightY + paddleRight.clientHeight
+            ) {
+                ballSpeedX = -ballSpeedX;
+            }
+
+            // Balle qui sort du terrain
+            if (ballX < 0) {
+                // Point pour le joueur droit
+                rightScore++;
+                scoreRight.textContent = rightScore;
+                resetBall();
+            } else if (ballX > gameBoard.clientWidth - ball.clientWidth) {
+                // Point pour le joueur gauche
+                leftScore++;
+                scoreLeft.textContent = leftScore;
+                resetBall();
+            }
+        }
+
+        // Boucle de jeu principale
+        function gameLoop() {
+            if (gameRunning) {
+                movePaddles();
+                updateBall();
+                updatePositions();
+                requestAnimationFrame(gameLoop);
+            }
+        }
+
+        // Événements pour les contrôles
+        startBtn.addEventListener('click', () => {
+            if (!gameRunning) {
+                gameRunning = true;
+                gameLoop();
+            }
+        });
+
+        resetBtn.addEventListener('click', resetGame);
+
+        // Événements pour le clavier
+        document.addEventListener('keydown', handleKeyDown);
+        document.addEventListener('keyup', handleKeyUp);
+
+        // Initialisation des positions
+        resetGame();
+
+        // TODO pour l'apprenti:
+        // 1. Implémenter le système de collision avancé décrit en pseudo-code
+        // 2. Ajouter des effets visuels lors des rebonds (particules, flash, etc.)
+        // 3. Implémenter un système de niveaux de difficulté
+        // 4. Ajouter des effets sonores avec variation de pitch selon la vitesse
+        // 5. Créer un menu de pause et d'options
+    </script>
+</body>
+</html>
