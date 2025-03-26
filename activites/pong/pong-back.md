@@ -258,14 +258,15 @@ try {
         LIMIT ?
     ");
     
-    // Exécuter la requête
-    $stmt->execute([$limit]);
+    // Exécuter la requête en passant et forçant le paramètre
+    // à int (car sinon il est interprété comme string
+    // et LIMIT veut un INT...
+    $stmt->execute([(int)$limit]);
     
     // Récupérer tous les résultats
     $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     // Renvoyer les scores au format JSON
-    header('Content-Type: application/json');
     echo json_encode([
         'success' => true,
         'scores' => $scores
