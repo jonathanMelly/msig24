@@ -93,7 +93,7 @@ jobs:
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           fi
       - name: Generate slides
-        if: steps.check_changes_slides.outputs.changes_detected == 'true'
+        #if: steps.check_changes_slides.outputs.changes_detected == 'true'
         run: pnpm slidev:lin
         continue-on-error: true
 
