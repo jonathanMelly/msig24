@@ -1,4 +1,7 @@
 # Création d'un ERP avec Python, Tkinter et MariaDB
+
+![erp.png](erp.png)
+
 ## Prérequis
 Pour le développement de notre application ERP, nous aurons besoin d'installer plusieurs packages Python. Pip, le gestionnaire de packages de Python, sera utilisé pour faciliter cette installation. Voici un guide détaillé sur l'installation des dépendances nécessaires.
 
