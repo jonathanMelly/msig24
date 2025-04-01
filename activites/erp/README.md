@@ -471,16 +471,15 @@ if __name__ == "__main__":
 
 8. **Intégrations**:
     - Ajouter une API pour l'intégration avec d'autres systèmes
-    - Intégrer un système de notification par email
-    - Connecter à des services de livraison pour le suivi des expéditions
+      - Intégrer un système de notification par email
+      - Générer une [QR Facture](https://www.moneytoday.ch/lexikon/qr-rechnung)
+      - Connecter à des services de livraison pour le suivi des expéditions
 
 ## Proposition de solution
 <details>
 
 <summary>Si vraiment nécessaire, cliquer ici</summary>
 
-```python
-#TODO
-```
+[possible code source](erp-python.py)
 
 </details>
