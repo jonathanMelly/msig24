@@ -39,6 +39,22 @@ Afin de réutiliser le savoir acquis, voici déjà une [cheatsheet C#/Python](..
 
 ## Activités
 
+### Découverte
 - [Calculatrice, encore une](../activites/calculatrice/python.md)
-- [Code combat : plateforme d'apprentissage ludique](https://codecombat.com/)
+- [Code combat : plateforme d'apprentissage ludique](https://codecombat.com/) 💵
+- [Qui veut gagner des maillots](https://labs.section-inf.ch/codelabs/python-02/index.html?index=..%2F..index#5)
+
+### Bases
+- [Bases du langage](https://www.learnpython.org/en/Hello%2C_World%21)
+
+### Maîtrise
+- [Snake](https://labs.section-inf.ch/codelabs/python-03/index.html?index=..%2F..index#4)
+
+### IA
+- [PyChat](https://labs.section-inf.ch/codelabs/ia-01/index.html?index=..%2F..index#7)
+- [Classification](https://labs.section-inf.ch/codelabs/ia-02/index.html?index=..%2F..index#2)
+
+### Défis
+- [TicTacToe](https://labs.section-inf.ch/codelabs/python-04/index.html?index=..%2F..index#1)
+- [ERP](../activites/erp/README.md)
 - Ton projet personnel à définir !
